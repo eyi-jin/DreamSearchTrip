@@ -18,11 +18,15 @@
         <option value="">소분류 선택하세요</option>
       </select>
     </form>
-    <button id="btnSearch" type="button" class="btn btn-primary mt-3 mb-3">검색</button>
+    <button id="btnSearch" type="button" class="btn btn-primary mt-3 mb-3">
+      검색
+    </button>
   </div>
 </template>
 
 <script>
+import http from "@/components/common/axios";
+
 export default {
   data() {
     return {
@@ -48,7 +52,7 @@ export default {
   },
   methods: {
     getList: async function () {
-      let url = `trip/list`;
+      let url = `/trip/list`;
       let urlParams =
         "?numOfRows=" +
         this.numOfRows +
@@ -65,8 +69,8 @@ export default {
         "&cat3=" +
         this.cat3;
 
-      let response = await fetch(url + urlParams);
-      let data = await response.json();
+      let response = await http.get(url + urlParams);
+      let { data } = response;
       // this.makeCard(data);
       console.log(data);
 
@@ -77,10 +81,11 @@ export default {
     getArea1List: async function () {
       let $this = this;
       let url = `trip/areaCode`;
-      let urlParams = "?numOfRows=" + this.numOfRows + "&pageNo= " + this.pageNo;
+      let urlParams =
+        "?numOfRows=" + this.numOfRows + "&pageNo= " + this.pageNo;
 
-      let response = await fetch(url + urlParams);
-      let data = await response.json();
+      let response = await http.get(url + urlParams);
+      let { data } = response;
       console.log(data);
 
       let codeList = data.response.body.items.item;
@@ -102,10 +107,15 @@ export default {
     getArea2List: async function () {
       let url = `trip/areaCode`;
       let urlParams =
-        "?numOfRows=" + this.numOfRows + "&pageNo=" + this.pageNo + "&areaCode=" + this.areaCode;
+        "?numOfRows=" +
+        this.numOfRows +
+        "&pageNo=" +
+        this.pageNo +
+        "&areaCode=" +
+        this.areaCode;
 
-      let response = await fetch(url + urlParams);
-      let data = await response.json();
+      let response = await http.get(url + urlParams);
+      let { data } = response;
       console.log(data);
 
       let codeList = data.response.body.items.item;
@@ -123,8 +133,8 @@ export default {
       let url = `trip/categoryCode`;
       let urlParams = "?numOfRows=" + this.numOfRows + "&pageNo=" + this.pageNo;
 
-      let response = await fetch(url + urlParams);
-      let data = await response.json();
+      let response = await http.get(url + urlParams);
+      let { data } = response;
       console.log(data);
 
       let codeList = data.response.body.items.item;
@@ -147,10 +157,15 @@ export default {
       let $this = this;
       let url = `trip/categoryCode`;
       let urlParams =
-        "?numOfRows=" + this.numOfRows + "&pageNo=" + this.pageNo + "&cat1=" + this.cat1;
+        "?numOfRows=" +
+        this.numOfRows +
+        "&pageNo=" +
+        this.pageNo +
+        "&cat1=" +
+        this.cat1;
 
-      let response = await fetch(url + urlParams);
-      let data = await response.json();
+      let response = await http.get(url + urlParams);
+      let { data } = response;
       console.log(data);
 
       let codeList = data.response.body.items.item;
@@ -181,8 +196,8 @@ export default {
         "&cat2=" +
         this.cat2;
 
-      let response = await fetch(url + urlParams);
-      let data = await response.json();
+      let response = await http.get(url + urlParams);
+      let { data } = response;
       console.log(data);
 
       let codeList = data.response.body.items.item;

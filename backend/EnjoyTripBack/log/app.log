@@ -1,0 +1,20 @@
+2023-05-18 17:22:09.337  INFO 16724 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Starting EnjoyTripBackApplication using Java 1.8.0_192 on DESKTOP-DOGVPUB with PID 16724 (C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack\bin\main started by SSAFY in C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack)
+2023-05-18 17:22:09.338 DEBUG 16724 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Running with Spring Boot v2.7.11, Spring v5.3.27
+2023-05-18 17:22:09.338  INFO 16724 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-05-18 17:22:09.368  INFO 16724 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-18 17:22:09.370  INFO 16724 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-18 17:22:10.112  INFO 16724 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-18 17:22:10.117  INFO 16724 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-18 17:22:10.118  INFO 16724 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-18 17:22:10.175  INFO 16724 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-18 17:22:10.175  INFO 16724 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 805 ms
+2023-05-18 17:22:10.682  INFO 16724 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-18 17:22:10.703  INFO 16724 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-18 17:22:10.710  INFO 16724 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Started EnjoyTripBackApplication in 1.639 seconds (JVM running for 2.175)
+2023-05-18 17:22:51.762  INFO 16724 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-18 17:22:51.762  INFO 16724 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-18 17:22:51.763  INFO 16724 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-18 17:22:51.810  INFO 16724 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-18 17:22:51.959  INFO 16724 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-18 17:22:51.963 DEBUG 16724 --- [http-nio-8080-exec-1] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-18 17:22:51.976 DEBUG 16724 --- [http-nio-8080-exec-1] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)

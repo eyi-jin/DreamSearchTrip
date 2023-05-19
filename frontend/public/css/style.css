@@ -9747,8 +9747,8 @@ textarea {
     position: relative;
     z-index: 2; }
   .hero, .hero > .container > .row {
-    padding-top: 7rem;
-    padding-bottom: 7rem; }
+    padding-top: 3rem;
+    padding-bottom: 3rem; }
     @media (max-width: 767.98px) {
       .hero, .hero > .container > .row {
         padding-top: 4rem;

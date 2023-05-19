@@ -1,6 +1,42 @@
 <template>
-    <div>
-        <div id="map"></div>
+    <div class="d-flex">
+        <!-- 사이드바 -->
+        <div class="col-sm-2 sidebar" id="placesList">
+            <!-- <div class="sidebar-box">
+                <img
+                    src="images/person_1.jpg"
+                    alt="Free Website Template by Free-Template.co"
+                    class="img-fluid mb-4 w-50 rounded-circle"
+                />
+                <h3 class="text-black">About The Author</h3>
+                <p>
+                    Even the all-powerful Pointing has no control about the blind texts it is an
+                    almost unorthographic life One day however a small line of blind text by the
+                    name of Lorem Ipsum decided to leave for the far World of Grammar.
+                </p>
+                <p><a href="#" class="btn btn-primary btn-md text-white">Read More</a></p>
+            </div> -->
+            <div class="sidebar-box">
+                <h3 class="text-black">Paragraph</h3>
+                <p>
+                    When she reached the first hills of the Italic Mountains, she had a last view
+                    back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
+                    Village and the subline of her own road, the Line Lane. Pityful a rethoric
+                    question ran over her cheek, then she continued her way.
+                </p>
+            </div>
+
+            <div class="sidebar-box">
+                <h3 class="text-black">Paragraph</h3>
+                <p>
+                    When she reached the first hills of the Italic Mountains, she had a last view
+                    back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
+                    Village and the subline of her own road, the Line Lane. Pityful a rethoric
+                    question ran over her cheek, then she continued her way.
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-10 sidebar" id="map"></div>
     </div>
 </template>
 
@@ -68,15 +104,39 @@ export default {
             this.map = new window.kakao.maps.Map(container, options);
             //   this.loadMarker();
         },
-        // 지정한 위치에 마커 불러오기
+        getListItem(places) {
+            var el = document.createElement("li"),
+                itemStr =
+                    '<span class="markerbg marker_' +
+                    '"></span>' +
+                    '<div class="info">' +
+                    "   <h5>" +
+                    places.title +
+                    "</h5>";
+
+            if (places.addr) {
+                itemStr += "    <span>" + places.addr + "</span> ";
+            } else {
+                itemStr += "    <span>" + places.addr + "</span>";
+            }
+
+            itemStr += '  <span class="tel">' + places.tel + "</span>" + "</div>";
+
+            el.innerHTML = itemStr;
+            el.className = "item";
+
+            return el;
+        },
+        // 지정한 위치에 마커 및 장소 불러오기
         loadMarker() {
+            var listEl = document.getElementById("placesList");
+            var fragment = document.createDocumentFragment();
+
             // 현재 표시되어있는 marker들이 있다면 marker에 등록된 map을 없애준다.
             this.deleteMarker();
-            // 마커 이미지를 생성합니다
-            //   const imgSrc = require("@/assets/map/markerStar.png");
-            // 마커 이미지의 이미지 크기 입니다
-            //   const imgSize = new kakao.maps.Size(24, 35);
-            //   const markerImage = new kakao.maps.MarkerImage(imgSrc, imgSize);
+
+            // 검색 결과 목록에 추가된 항목들을 제거합니다
+            this.removeAllChildNods(listEl);
 
             // 마커를 생성합니다
             this.markers = [];
@@ -111,7 +171,31 @@ export default {
                 });
 
                 this.markers.push(marker);
+
+                //=====================사이드 바에 관광지 리스트 만들기===================
+
+                let obj = {
+                    title: position.title,
+                    addr: position.addr,
+                    tel: position.tel,
+                };
+                const itemEl = this.getListItem(obj);
+
+                // 이벤트 등록
+                itemEl.onmouseover = () => {
+                    infowindow.open(this.map, marker);
+                };
+
+                itemEl.onmouseout = () => {
+                    infowindow.close(this.map, marker);
+                };
+
+                fragment.appendChild(itemEl);
             });
+
+            // 검색결과 항목들을 검색결과 목록 Element에 추가합니다
+            listEl.appendChild(fragment);
+
             console.log("마커수 :" + this.markers.length);
 
             // 4. 지도를 이동시켜주기
@@ -123,10 +207,6 @@ export default {
 
             this.map.setBounds(bounds);
         },
-        // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다
-        closeOverlay() {
-            window.overlay.setMap(null);
-        },
         deleteMarker() {
             console.log("마커 지우기", this.markers.length);
             if (this.markers.length > 0) {
@@ -134,6 +214,12 @@ export default {
                     console.log(item);
                     item.setMap(null);
                 });
+            }
+        },
+        //검색결과 목록의 자식 Element를 제거하는 함수입니다
+        removeAllChildNods(el) {
+            while (el.hasChildNodes()) {
+                el.removeChild(el.lastChild);
             }
         },
     },

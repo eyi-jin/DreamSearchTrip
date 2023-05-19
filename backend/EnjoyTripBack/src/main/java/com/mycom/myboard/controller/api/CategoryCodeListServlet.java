@@ -97,7 +97,7 @@ public class CategoryCodeListServlet extends HttpServlet {
         
         System.out.println(result.toString());
         
-		response.addHeader("Access-Control-Allow-Origin", "*"); // VSCode Live Server Request
+//		response.addHeader("Access-Control-Allow-Origin", "*"); // VSCode Live Server Request
 		
 		response.setContentType("application/json; charset=utf-8");
 		response.getWriter().write(result.toString());

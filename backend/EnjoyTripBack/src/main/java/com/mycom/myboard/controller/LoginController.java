@@ -34,7 +34,7 @@ public class LoginController {
 	@PostMapping(value="/login")
 	public Map<String, String> login(@RequestBody UserDto dto, HttpSession session) {
 		UserDto userDto = loginService.login(dto);
-		
+		System.out.println(dto);
 		Map<String, String> map = new HashMap<>();
 		if(userDto != null) {
 			session.setAttribute("userDto", userDto); // 서버를 위해 저장

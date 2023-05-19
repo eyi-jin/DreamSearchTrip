@@ -67,7 +67,7 @@ export default {
   data() {
     return {
       userEmail: "mu@ya.ho",
-      userPassword: "qwe1234!",
+      userPassword: "qwer1234",
     };
   },
   methods: {

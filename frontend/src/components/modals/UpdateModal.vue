@@ -105,8 +105,10 @@ export default {
 
       const fileArray = Array.from(files); // Array 로 변환 가능
       fileArray.forEach((file) => formData.append("file", file));
-
-      let response = await http.post("/boards/" + this.boardId, formData);
+      let options = {
+        headers: { "Content-Type": "multipart/form-data" },
+      };
+      let response = await http.post("/boards/" + this.boardId, formData, options);
       let { data } = response;
       console.log(data);
 

@@ -1,42 +1,39 @@
 <template>
     <div class="d-flex">
         <!-- 사이드바 -->
-        <div class="col-sm-2 sidebar" id="placesList">
-            <!-- <div class="sidebar-box">
-                <img
-                    src="images/person_1.jpg"
-                    alt="Free Website Template by Free-Template.co"
-                    class="img-fluid mb-4 w-50 rounded-circle"
-                />
-                <h3 class="text-black">About The Author</h3>
-                <p>
-                    Even the all-powerful Pointing has no control about the blind texts it is an
-                    almost unorthographic life One day however a small line of blind text by the
-                    name of Lorem Ipsum decided to leave for the far World of Grammar.
-                </p>
-                <p><a href="#" class="btn btn-primary btn-md text-white">Read More</a></p>
-            </div> -->
-            <div class="sidebar-box">
-                <h3 class="text-black">Paragraph</h3>
-                <p>
-                    When she reached the first hills of the Italic Mountains, she had a last view
-                    back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-                    Village and the subline of her own road, the Line Lane. Pityful a rethoric
-                    question ran over her cheek, then she continued her way.
-                </p>
+        <div class="col-sm-2 sidebar" id="placesList" style="background-color: #f7f7f7; z-index: 2">
+            <div class="sidebar-box bg-white p-4 rounded job-position m-3">
+                <div class="row">
+                    <div class="">
+                        <h5>Product Designer</h5>
+                        <div class="align-items-center">
+                            <div class="d-flex align-items-center me-4">
+                                <span class="icon-room me-2"></span> <span>Remote</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="icon-clock-o me-2"></span> <span>Fulltime</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="sidebar-box">
-                <h3 class="text-black">Paragraph</h3>
-                <p>
-                    When she reached the first hills of the Italic Mountains, she had a last view
-                    back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-                    Village and the subline of her own road, the Line Lane. Pityful a rethoric
-                    question ran over her cheek, then she continued her way.
-                </p>
+            <div class="sidebar-box bg-white p-4 rounded job-position m-3">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <h5>Product Designer</h5>
+                        <div class="align-items-center">
+                            <div class="d-flex align-items-center me-4">
+                                <span class="icon-room me-2"></span> <span>Remote</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="icon-clock-o me-2"></span> <span>Fulltime</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-sm-10 sidebar" id="map"></div>
+        <div class="col-sm-12 sidebar" id="map"></div>
     </div>
 </template>
 
@@ -105,25 +102,30 @@ export default {
             //   this.loadMarker();
         },
         getListItem(places) {
-            var el = document.createElement("li"),
-                itemStr =
-                    '<span class="markerbg marker_' +
-                    '"></span>' +
-                    '<div class="info">' +
-                    "   <h5>" +
-                    places.title +
-                    "</h5>";
+            var el = document.createElement("div"),
+                itemStr = ` <div class="sidebar-box bg-white p-4 rounded job-position m-3">
+	                    <div class="row">
+		                  <div class="col-lg-12">
+			                <h5>${places.title}</h5> `;
 
             if (places.addr) {
-                itemStr += "    <span>" + places.addr + "</span> ";
+                itemStr += ` <div class="d-flex align-items-center">
+  					                 <span>주소: ${places.addr}</span>
+  				                </div> `;
             } else {
-                itemStr += "    <span>" + places.addr + "</span>";
+                itemStr += `<div class="d-flex align-items-center">
+					                   <span>주소: 표기 없음</span>
+				                  </div> `;
             }
-
-            itemStr += '  <span class="tel">' + places.tel + "</span>" + "</div>";
+            itemStr += `  <div class="d-flex align-items-center">
+					                  <span>전화번호: ${places.tel}</span>
+				                  </div> `;
+            itemStr += ` </div>
+                  		</div>
+                  	</div>
+                  </div> `;
 
             el.innerHTML = itemStr;
-            el.className = "item";
 
             return el;
         },

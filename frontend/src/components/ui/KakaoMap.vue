@@ -25,6 +25,9 @@ export default {
             this.trips.forEach((trip) => {
                 let obj = {};
                 obj.title = trip.title;
+                obj.addr = trip.addr1;
+                obj.img = trip.firstimage;
+                obj.tel = trip.tel;
                 obj.latlng = new kakao.maps.LatLng(trip.mapy, trip.mapx);
 
                 this.positions.push(obj);
@@ -78,12 +81,35 @@ export default {
             // 마커를 생성합니다
             this.markers = [];
             this.positions.forEach((position) => {
+                // information window 생성
+                const infowindow = new kakao.maps.InfoWindow({
+                    removable: true,
+                    content: `
+              <div class="card">
+                <img src="${position.img}" class="card-img-top" style="height: 10rem" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">${position.title}</h5>
+                  <p class="card-text"> 주소 : ${position.addr}</p>
+                  <p class="card-text"> 전화번호 : ${position.tel}</p>
+                </div>
+              </div>
+                    `,
+                });
                 const marker = new kakao.maps.Marker({
                     map: this.map, // 마커를 표시할 지도
                     position: position.latlng, // 마커를 표시할 위치
                     title: position.title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
                     //   image: markerImage, // 마커의 이미지
                 });
+                // 이벤트 등록
+                //  kakao.maps.event.addListener(marker, "click", () => {infowindow.open(this.map, marker);});
+                kakao.maps.event.addListener(marker, "mouseover", () => {
+                    infowindow.open(this.map, marker);
+                });
+                kakao.maps.event.addListener(marker, "mouseout", () => {
+                    infowindow.close(this.map, marker);
+                });
+
                 this.markers.push(marker);
             });
             console.log("마커수 :" + this.markers.length);
@@ -96,6 +122,10 @@ export default {
             );
 
             this.map.setBounds(bounds);
+        },
+        // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다
+        closeOverlay() {
+            window.overlay.setMap(null);
         },
         deleteMarker() {
             console.log("마커 지우기", this.markers.length);

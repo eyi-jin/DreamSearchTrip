@@ -1972,3 +1972,959 @@ java.lang.IllegalArgumentException: Invalid character found in method name [0x16
  java.lang.Thread.run(Thread.java:748)
 2023-05-19 14:04:53.819  INFO 1152 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
 2023-05-19 14:04:53.822  INFO 1152 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2023-05-19 14:09:57.801  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Starting EnjoyTripBackApplication using Java 1.8.0_192 on DESKTOP-DOGVPUB with PID 12816 (C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack\bin\main started by SSAFY in C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack)
+2023-05-19 14:09:57.802 DEBUG 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Running with Spring Boot v2.7.11, Spring v5.3.27
+2023-05-19 14:09:57.802  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-05-19 14:09:57.831  INFO 12816 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-19 14:09:57.831  INFO 12816 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-19 14:09:58.567  INFO 12816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-19 14:09:58.572  INFO 12816 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-19 14:09:58.573  INFO 12816 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-19 14:09:58.631  INFO 12816 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-19 14:09:58.631  INFO 12816 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 799 ms
+2023-05-19 14:09:59.177  INFO 12816 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-19 14:09:59.199  INFO 12816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-19 14:09:59.206  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Started EnjoyTripBackApplication in 1.671 seconds (JVM running for 2.396)
+2023-05-19 14:10:42.841  INFO 12816 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-19 14:10:42.841  INFO 12816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-19 14:10:42.842  INFO 12816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-19 14:10:42.893  INFO 12816 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-05-19 14:10:43.044  INFO 12816 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-05-19 14:10:43.048 DEBUG 12816 --- [http-nio-8080-exec-2] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 14:10:43.063 DEBUG 12816 --- [http-nio-8080-exec-2] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 14:10:43.079 DEBUG 12816 --- [http-nio-8080-exec-2] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 14:10:45.513 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:10:45.514 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 14:10:45.519 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:10:45.519 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:10:45.519 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:10:45.522 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:10:47.955 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardUserReadCount    : ==>  Preparing: SELECT count(*) FROM board_user_read WHERE board_id = ? and user_seq = ?
+2023-05-19 14:10:47.955 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardUserReadCount    : ==> Parameters: 3507(Integer), 8(Integer)
+2023-05-19 14:10:47.956 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardUserReadCount    : <==      Total: 1
+2023-05-19 14:10:47.958 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardUserReadInsert   : ==>  Preparing: INSERT INTO board_user_read ( board_id, user_seq ) VALUES ( ?, ? )
+2023-05-19 14:10:47.958 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardUserReadInsert   : ==> Parameters: 3507(Integer), 8(Integer)
+2023-05-19 14:10:47.960 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardUserReadInsert   : <==    Updates: 1
+2023-05-19 14:10:47.960 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardReadCountUpdate  : ==>  Preparing: UPDATE board set READ_COUNT = READ_COUNT + 1 WHERE BOARD_ID = ?
+2023-05-19 14:10:47.960 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardReadCountUpdate  : ==> Parameters: 3507(Integer)
+2023-05-19 14:10:47.961 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardReadCountUpdate  : <==    Updates: 1
+2023-05-19 14:10:47.961 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.myboard.dao.BoardDao.boardDetail     : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.BOARD_ID = ? AND b.USER_SEQ = u.USER_SEQ
+2023-05-19 14:10:47.961 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.myboard.dao.BoardDao.boardDetail     : ==> Parameters: 3507(Integer)
+2023-05-19 14:10:47.962 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.myboard.dao.BoardDao.boardDetail     : <==      Total: 1
+2023-05-19 14:10:47.963 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardDetailFileList   : ==>  Preparing: SELECT BOARD_ID, FILE_ID, FILE_NAME, FILE_SIZE, FILE_CONTENT_TYPE, FILE_URL, REG_DT FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 14:10:47.963 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardDetailFileList   : ==> Parameters: 3507(Integer)
+2023-05-19 14:10:47.964 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardDetailFileList   : <==      Total: 0
+2023-05-19 14:10:54.754 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.myboard.dao.BoardDao.boardUpdate     : ==>  Preparing: UPDATE BOARD SET TITLE = ?, CONTENT = ? WHERE BOARD_ID = ?
+2023-05-19 14:10:54.755 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.myboard.dao.BoardDao.boardUpdate     : ==> Parameters: 12312312312(String), <p>1</p><p>&nbsp;</p>(String), 3507(Integer)
+2023-05-19 14:10:54.755 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.myboard.dao.BoardDao.boardUpdate     : <==    Updates: 1
+2023-05-19 14:10:54.755 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.d.BoardDao.boardFileUrlDeleteList  : ==>  Preparing: SELECT FILE_URL FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 14:10:54.755 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.d.BoardDao.boardFileUrlDeleteList  : ==> Parameters: 3507(Integer)
+2023-05-19 14:10:54.756 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.d.BoardDao.boardFileUrlDeleteList  : <==      Total: 0
+2023-05-19 14:10:54.757 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardFileDelete       : ==>  Preparing: DELETE FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 14:10:54.757 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardFileDelete       : ==> Parameters: 3507(Integer)
+2023-05-19 14:10:54.758 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardFileDelete       : <==    Updates: 0
+2023-05-19 14:10:54.767 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:10:54.767 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 14:10:54.771 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:10:54.772 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:10:54.772 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:10:54.774 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:10:55.878 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardUserReadCount    : ==>  Preparing: SELECT count(*) FROM board_user_read WHERE board_id = ? and user_seq = ?
+2023-05-19 14:10:55.878 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardUserReadCount    : ==> Parameters: 3507(Integer), 8(Integer)
+2023-05-19 14:10:55.879 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardUserReadCount    : <==      Total: 1
+2023-05-19 14:10:55.880 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.myboard.dao.BoardDao.boardDetail     : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.BOARD_ID = ? AND b.USER_SEQ = u.USER_SEQ
+2023-05-19 14:10:55.880 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.myboard.dao.BoardDao.boardDetail     : ==> Parameters: 3507(Integer)
+2023-05-19 14:10:55.881 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.myboard.dao.BoardDao.boardDetail     : <==      Total: 1
+2023-05-19 14:10:55.881 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardDetailFileList   : ==>  Preparing: SELECT BOARD_ID, FILE_ID, FILE_NAME, FILE_SIZE, FILE_CONTENT_TYPE, FILE_URL, REG_DT FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 14:10:55.881 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardDetailFileList   : ==> Parameters: 3507(Integer)
+2023-05-19 14:10:55.882 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardDetailFileList   : <==      Total: 0
+2023-05-19 14:11:06.310 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardUserReadCount    : ==>  Preparing: SELECT count(*) FROM board_user_read WHERE board_id = ? and user_seq = ?
+2023-05-19 14:11:06.311 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardUserReadCount    : ==> Parameters: 3504(Integer), 8(Integer)
+2023-05-19 14:11:06.312 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardUserReadCount    : <==      Total: 1
+2023-05-19 14:11:06.312 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.myboard.dao.BoardDao.boardDetail     : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.BOARD_ID = ? AND b.USER_SEQ = u.USER_SEQ
+2023-05-19 14:11:06.312 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.myboard.dao.BoardDao.boardDetail     : ==> Parameters: 3504(Integer)
+2023-05-19 14:11:06.312 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.myboard.dao.BoardDao.boardDetail     : <==      Total: 1
+2023-05-19 14:11:06.312 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardDetailFileList   : ==>  Preparing: SELECT BOARD_ID, FILE_ID, FILE_NAME, FILE_SIZE, FILE_CONTENT_TYPE, FILE_URL, REG_DT FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 14:11:06.313 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardDetailFileList   : ==> Parameters: 3504(Integer)
+2023-05-19 14:11:06.313 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardDetailFileList   : <==      Total: 0
+2023-05-19 14:11:12.803 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListSearchWord   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ AND b.TITLE LIKE CONCAT('%', ? ,'%') ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:11:12.803 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListSearchWord   : ==> Parameters: 123(String), 10(Integer), 0(Integer)
+2023-05-19 14:11:12.813 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListSearchWord   : <==      Total: 10
+2023-05-19 14:11:12.814 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.d.B.boardListTotalSearchWordCount  : ==>  Preparing: SELECT COUNT(*) FROM BOARD WHERE TITLE LIKE CONCAT('%', ? ,'%')
+2023-05-19 14:11:12.814 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.d.B.boardListTotalSearchWordCount  : ==> Parameters: 123(String)
+2023-05-19 14:11:12.816 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.d.B.boardListTotalSearchWordCount  : <==      Total: 1
+2023-05-19 14:11:16.980 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListSearchWord   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ AND b.TITLE LIKE CONCAT('%', ? ,'%') ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:11:16.981 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListSearchWord   : ==> Parameters: 123(String), 10(Integer), 10(Integer)
+2023-05-19 14:11:16.985 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListSearchWord   : <==      Total: 8
+2023-05-19 14:11:16.985 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.d.B.boardListTotalSearchWordCount  : ==>  Preparing: SELECT COUNT(*) FROM BOARD WHERE TITLE LIKE CONCAT('%', ? ,'%')
+2023-05-19 14:11:16.986 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.d.B.boardListTotalSearchWordCount  : ==> Parameters: 123(String)
+2023-05-19 14:11:16.987 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.d.B.boardListTotalSearchWordCount  : <==      Total: 1
+2023-05-19 14:11:17.956 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListSearchWord   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ AND b.TITLE LIKE CONCAT('%', ? ,'%') ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:11:17.957 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListSearchWord   : ==> Parameters: 123(String), 10(Integer), 0(Integer)
+2023-05-19 14:11:17.960 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListSearchWord   : <==      Total: 10
+2023-05-19 14:11:17.961 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.d.B.boardListTotalSearchWordCount  : ==>  Preparing: SELECT COUNT(*) FROM BOARD WHERE TITLE LIKE CONCAT('%', ? ,'%')
+2023-05-19 14:11:17.961 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.d.B.boardListTotalSearchWordCount  : ==> Parameters: 123(String)
+2023-05-19 14:11:17.963 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.d.B.boardListTotalSearchWordCount  : <==      Total: 1
+2023-05-19 14:30:00.143 DEBUG 12816 --- [http-nio-8080-exec-4] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 14:30:00.144 DEBUG 12816 --- [http-nio-8080-exec-4] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 14:30:00.145 DEBUG 12816 --- [http-nio-8080-exec-4] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 14:30:03.202 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:30:03.203 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 14:30:03.205 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:30:03.205 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:30:03.206 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:30:03.208 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:30:04.733 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:30:04.734 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 10(Integer)
+2023-05-19 14:30:04.735 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:30:04.736 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:30:04.736 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:30:04.738 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:30:05.221 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:30:05.222 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 30(Integer)
+2023-05-19 14:30:05.223 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:30:05.223 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:30:05.224 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:30:05.227 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:30:06.340 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:30:06.341 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 100(Integer)
+2023-05-19 14:30:06.342 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:30:06.343 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:30:06.343 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:30:06.345 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:30:07.186 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:30:07.187 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 110(Integer)
+2023-05-19 14:30:07.188 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:30:07.189 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:30:07.189 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:30:07.191 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:30:07.557 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:30:07.557 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 130(Integer)
+2023-05-19 14:30:07.559 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:30:07.559 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:30:07.559 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:30:07.561 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:30:08.533 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardUserReadCount    : ==>  Preparing: SELECT count(*) FROM board_user_read WHERE board_id = ? and user_seq = ?
+2023-05-19 14:30:08.534 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardUserReadCount    : ==> Parameters: 3367(Integer), 8(Integer)
+2023-05-19 14:30:08.534 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardUserReadCount    : <==      Total: 1
+2023-05-19 14:30:08.535 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardUserReadInsert   : ==>  Preparing: INSERT INTO board_user_read ( board_id, user_seq ) VALUES ( ?, ? )
+2023-05-19 14:30:08.535 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardUserReadInsert   : ==> Parameters: 3367(Integer), 8(Integer)
+2023-05-19 14:30:08.536 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardUserReadInsert   : <==    Updates: 1
+2023-05-19 14:30:08.536 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardReadCountUpdate  : ==>  Preparing: UPDATE board set READ_COUNT = READ_COUNT + 1 WHERE BOARD_ID = ?
+2023-05-19 14:30:08.536 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardReadCountUpdate  : ==> Parameters: 3367(Integer)
+2023-05-19 14:30:08.537 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardReadCountUpdate  : <==    Updates: 1
+2023-05-19 14:30:08.537 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.myboard.dao.BoardDao.boardDetail     : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.BOARD_ID = ? AND b.USER_SEQ = u.USER_SEQ
+2023-05-19 14:30:08.537 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.myboard.dao.BoardDao.boardDetail     : ==> Parameters: 3367(Integer)
+2023-05-19 14:30:08.538 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.myboard.dao.BoardDao.boardDetail     : <==      Total: 1
+2023-05-19 14:30:08.538 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardDetailFileList   : ==>  Preparing: SELECT BOARD_ID, FILE_ID, FILE_NAME, FILE_SIZE, FILE_CONTENT_TYPE, FILE_URL, REG_DT FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 14:30:08.539 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardDetailFileList   : ==> Parameters: 3367(Integer)
+2023-05-19 14:30:08.539 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardDetailFileList   : <==      Total: 0
+2023-05-19 14:30:10.797 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:30:10.797 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 90(Integer)
+2023-05-19 14:30:10.798 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:30:10.799 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:30:10.799 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:30:10.801 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:30:12.158 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:30:12.158 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 10(Integer)
+2023-05-19 14:30:12.160 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:30:12.160 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:30:12.160 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:30:12.162 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:30:13.325 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardUserReadCount    : ==>  Preparing: SELECT count(*) FROM board_user_read WHERE board_id = ? and user_seq = ?
+2023-05-19 14:30:13.325 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardUserReadCount    : ==> Parameters: 3494(Integer), 8(Integer)
+2023-05-19 14:30:13.326 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardUserReadCount    : <==      Total: 1
+2023-05-19 14:30:13.326 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.myboard.dao.BoardDao.boardDetail     : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.BOARD_ID = ? AND b.USER_SEQ = u.USER_SEQ
+2023-05-19 14:30:13.326 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.myboard.dao.BoardDao.boardDetail     : ==> Parameters: 3494(Integer)
+2023-05-19 14:30:13.327 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.myboard.dao.BoardDao.boardDetail     : <==      Total: 1
+2023-05-19 14:30:13.327 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardDetailFileList   : ==>  Preparing: SELECT BOARD_ID, FILE_ID, FILE_NAME, FILE_SIZE, FILE_CONTENT_TYPE, FILE_URL, REG_DT FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 14:30:13.327 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardDetailFileList   : ==> Parameters: 3494(Integer)
+2023-05-19 14:30:13.328 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardDetailFileList   : <==      Total: 0
+2023-05-19 14:30:17.938 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.myboard.dao.BoardDao.boardUpdate     : ==>  Preparing: UPDATE BOARD SET TITLE = ?, CONTENT = ? WHERE BOARD_ID = ?
+2023-05-19 14:30:17.938 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.myboard.dao.BoardDao.boardUpdate     : ==> Parameters: 정명진(String), <p>정명진</p>(String), 3494(Integer)
+2023-05-19 14:30:17.940 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.myboard.dao.BoardDao.boardUpdate     : <==    Updates: 1
+2023-05-19 14:30:17.940 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.d.BoardDao.boardFileUrlDeleteList  : ==>  Preparing: SELECT FILE_URL FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 14:30:17.940 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.d.BoardDao.boardFileUrlDeleteList  : ==> Parameters: 3494(Integer)
+2023-05-19 14:30:17.941 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.d.BoardDao.boardFileUrlDeleteList  : <==      Total: 0
+2023-05-19 14:30:17.941 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardFileDelete       : ==>  Preparing: DELETE FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 14:30:17.941 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardFileDelete       : ==> Parameters: 3494(Integer)
+2023-05-19 14:30:17.942 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardFileDelete       : <==    Updates: 0
+2023-05-19 14:30:17.953 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:30:17.953 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 10(Integer)
+2023-05-19 14:30:17.955 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:30:17.955 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:30:17.955 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:30:17.957 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:30:26.242 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.myboard.dao.BoardDao.boardInsert     : ==>  Preparing: INSERT INTO BOARD ( USER_SEQ, TITLE, CONTENT, REG_DT, READ_COUNT ) VALUES ( ?, ?, ?, now(), 0 )
+2023-05-19 14:30:26.242 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.myboard.dao.BoardDao.boardInsert     : ==> Parameters: 8(Integer), 123123123(String), <p>123123123</p>(String)
+2023-05-19 14:30:26.243 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.myboard.dao.BoardDao.boardInsert     : <==    Updates: 1
+2023-05-19 14:30:26.255 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:30:26.255 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 10(Integer)
+2023-05-19 14:30:26.256 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:30:26.256 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:30:26.256 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:30:26.258 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:30:41.696 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.UserDao.userPasswordChange     : ==>  Preparing: update users set user_password = ? where user_email = ?
+2023-05-19 14:30:41.696 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.UserDao.userPasswordChange     : ==> Parameters: qwer1234(String), mu@ya.ho(String)
+2023-05-19 14:30:41.697 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.UserDao.userPasswordChange     : <==    Updates: 1
+2023-05-19 14:30:49.783 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 14:30:49.784 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 14:30:49.785 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 14:30:49.785 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 14:30:49.786 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 14:30:49.788 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 14:30:56.083 DEBUG 12816 --- [http-nio-8080-exec-8] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 14:30:56.084 DEBUG 12816 --- [http-nio-8080-exec-8] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 14:30:56.084 DEBUG 12816 --- [http-nio-8080-exec-8] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 15:00:01.544 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:00:01.544 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:00:01.546 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:00:01.546 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:00:01.547 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:00:01.549 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:00:03.599 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:00:03.599 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 70(Integer)
+2023-05-19 15:00:03.601 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:00:03.601 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:00:03.601 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:00:03.603 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:00:06.255 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:00:06.255 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:00:06.257 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:00:06.257 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:00:06.257 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:00:06.260 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:00:07.952 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:00:07.952 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 70(Integer)
+2023-05-19 15:00:07.954 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:00:07.954 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:00:07.954 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:00:07.956 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:00:50.495 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:00:50.495 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 60(Integer)
+2023-05-19 15:00:50.496 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:00:50.496 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:00:50.497 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:00:50.499 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:00:51.327 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:00:51.328 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 50(Integer)
+2023-05-19 15:00:51.330 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:00:51.330 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:00:51.330 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:00:51.332 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:00:52.118 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:00:52.118 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 70(Integer)
+2023-05-19 15:00:52.119 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:00:52.119 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:00:52.119 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:00:52.122 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:00:52.736 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:00:52.736 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 80(Integer)
+2023-05-19 15:00:52.738 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:00:52.738 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:00:52.738 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:00:52.740 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:00:54.826 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:00:54.826 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:00:54.828 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:00:54.829 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:00:54.829 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:00:54.831 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:00:58.268 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:00:58.268 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:00:58.270 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:00:58.270 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:00:58.270 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:00:58.272 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:07.389 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:07.390 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:01:07.391 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:07.391 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:07.392 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:07.394 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:09.463 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:09.464 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 70(Integer)
+2023-05-19 15:01:09.465 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:09.465 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:09.465 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:09.468 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:11.128 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:11.129 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:01:11.130 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:11.130 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:11.130 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:11.132 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:12.439 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:12.439 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 70(Integer)
+2023-05-19 15:01:12.441 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:12.441 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:12.441 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:12.443 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:13.108 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardUserReadCount    : ==>  Preparing: SELECT count(*) FROM board_user_read WHERE board_id = ? and user_seq = ?
+2023-05-19 15:01:13.108 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardUserReadCount    : ==> Parameters: 3428(Integer), 8(Integer)
+2023-05-19 15:01:13.109 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardUserReadCount    : <==      Total: 1
+2023-05-19 15:01:13.109 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardUserReadInsert   : ==>  Preparing: INSERT INTO board_user_read ( board_id, user_seq ) VALUES ( ?, ? )
+2023-05-19 15:01:13.109 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardUserReadInsert   : ==> Parameters: 3428(Integer), 8(Integer)
+2023-05-19 15:01:13.110 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardUserReadInsert   : <==    Updates: 1
+2023-05-19 15:01:13.110 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardReadCountUpdate  : ==>  Preparing: UPDATE board set READ_COUNT = READ_COUNT + 1 WHERE BOARD_ID = ?
+2023-05-19 15:01:13.110 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardReadCountUpdate  : ==> Parameters: 3428(Integer)
+2023-05-19 15:01:13.111 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardReadCountUpdate  : <==    Updates: 1
+2023-05-19 15:01:13.111 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.myboard.dao.BoardDao.boardDetail     : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.BOARD_ID = ? AND b.USER_SEQ = u.USER_SEQ
+2023-05-19 15:01:13.112 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.myboard.dao.BoardDao.boardDetail     : ==> Parameters: 3428(Integer)
+2023-05-19 15:01:13.112 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.myboard.dao.BoardDao.boardDetail     : <==      Total: 1
+2023-05-19 15:01:13.112 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardDetailFileList   : ==>  Preparing: SELECT BOARD_ID, FILE_ID, FILE_NAME, FILE_SIZE, FILE_CONTENT_TYPE, FILE_URL, REG_DT FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 15:01:13.112 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardDetailFileList   : ==> Parameters: 3428(Integer)
+2023-05-19 15:01:13.113 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardDetailFileList   : <==      Total: 0
+2023-05-19 15:01:44.103 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:44.103 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 80(Integer)
+2023-05-19 15:01:44.104 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:44.104 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:44.104 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:44.106 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:45.423 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardUserReadCount    : ==>  Preparing: SELECT count(*) FROM board_user_read WHERE board_id = ? and user_seq = ?
+2023-05-19 15:01:45.424 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardUserReadCount    : ==> Parameters: 3418(Integer), 8(Integer)
+2023-05-19 15:01:45.424 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardUserReadCount    : <==      Total: 1
+2023-05-19 15:01:45.424 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardUserReadInsert   : ==>  Preparing: INSERT INTO board_user_read ( board_id, user_seq ) VALUES ( ?, ? )
+2023-05-19 15:01:45.425 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardUserReadInsert   : ==> Parameters: 3418(Integer), 8(Integer)
+2023-05-19 15:01:45.425 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardUserReadInsert   : <==    Updates: 1
+2023-05-19 15:01:45.425 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardReadCountUpdate  : ==>  Preparing: UPDATE board set READ_COUNT = READ_COUNT + 1 WHERE BOARD_ID = ?
+2023-05-19 15:01:45.426 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardReadCountUpdate  : ==> Parameters: 3418(Integer)
+2023-05-19 15:01:45.427 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardReadCountUpdate  : <==    Updates: 1
+2023-05-19 15:01:45.427 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.myboard.dao.BoardDao.boardDetail     : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.BOARD_ID = ? AND b.USER_SEQ = u.USER_SEQ
+2023-05-19 15:01:45.427 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.myboard.dao.BoardDao.boardDetail     : ==> Parameters: 3418(Integer)
+2023-05-19 15:01:45.428 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.myboard.dao.BoardDao.boardDetail     : <==      Total: 1
+2023-05-19 15:01:45.428 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardDetailFileList   : ==>  Preparing: SELECT BOARD_ID, FILE_ID, FILE_NAME, FILE_SIZE, FILE_CONTENT_TYPE, FILE_URL, REG_DT FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 15:01:45.428 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardDetailFileList   : ==> Parameters: 3418(Integer)
+2023-05-19 15:01:45.428 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardDetailFileList   : <==      Total: 0
+2023-05-19 15:01:47.814 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:47.814 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:01:47.816 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:47.816 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:47.816 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:47.818 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:49.503 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:49.503 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 70(Integer)
+2023-05-19 15:01:49.504 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:49.504 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:49.504 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:49.507 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:49.958 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:49.959 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 90(Integer)
+2023-05-19 15:01:49.960 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:49.960 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:49.960 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:49.962 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:50.470 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:50.470 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 100(Integer)
+2023-05-19 15:01:50.471 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:50.472 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:50.472 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:50.474 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:50.684 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:50.684 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 190(Integer)
+2023-05-19 15:01:50.685 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:50.685 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:50.686 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:50.687 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:50.860 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:50.860 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 190(Integer)
+2023-05-19 15:01:50.861 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:50.862 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:50.862 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:50.863 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:51.358 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:51.358 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 170(Integer)
+2023-05-19 15:01:51.360 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:51.360 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:51.360 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:51.362 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:52.916 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:52.917 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:01:52.918 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:52.918 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:52.918 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:52.921 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:55.063 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:55.063 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 60(Integer)
+2023-05-19 15:01:55.065 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:55.065 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:55.065 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:55.068 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:01:56.506 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:01:56.507 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:01:56.508 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:01:56.508 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:01:56.509 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:01:56.511 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:02:06.285 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:02:06.286 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:02:06.287 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:02:06.288 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:02:06.288 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:02:06.290 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:02:19.637 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:02:19.637 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:02:19.639 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:02:19.639 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:02:19.639 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:02:19.641 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:02:20.853 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardUserReadCount    : ==>  Preparing: SELECT count(*) FROM board_user_read WHERE board_id = ? and user_seq = ?
+2023-05-19 15:02:20.853 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardUserReadCount    : ==> Parameters: 3503(Integer), 8(Integer)
+2023-05-19 15:02:20.854 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardUserReadCount    : <==      Total: 1
+2023-05-19 15:02:20.854 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.myboard.dao.BoardDao.boardDetail     : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.BOARD_ID = ? AND b.USER_SEQ = u.USER_SEQ
+2023-05-19 15:02:20.855 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.myboard.dao.BoardDao.boardDetail     : ==> Parameters: 3503(Integer)
+2023-05-19 15:02:20.856 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.myboard.dao.BoardDao.boardDetail     : <==      Total: 1
+2023-05-19 15:02:20.856 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardDetailFileList   : ==>  Preparing: SELECT BOARD_ID, FILE_ID, FILE_NAME, FILE_SIZE, FILE_CONTENT_TYPE, FILE_URL, REG_DT FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 15:02:20.856 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardDetailFileList   : ==> Parameters: 3503(Integer)
+2023-05-19 15:02:20.856 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardDetailFileList   : <==      Total: 0
+2023-05-19 15:02:22.662 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:02:22.662 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 80(Integer)
+2023-05-19 15:02:22.663 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:02:22.663 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:02:22.663 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:02:22.665 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:02:23.372 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardUserReadCount    : ==>  Preparing: SELECT count(*) FROM board_user_read WHERE board_id = ? and user_seq = ?
+2023-05-19 15:02:23.372 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardUserReadCount    : ==> Parameters: 3413(Integer), 8(Integer)
+2023-05-19 15:02:23.373 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardUserReadCount    : <==      Total: 1
+2023-05-19 15:02:23.373 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.myboard.dao.BoardDao.boardDetail     : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.BOARD_ID = ? AND b.USER_SEQ = u.USER_SEQ
+2023-05-19 15:02:23.373 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.myboard.dao.BoardDao.boardDetail     : ==> Parameters: 3413(Integer)
+2023-05-19 15:02:23.374 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.myboard.dao.BoardDao.boardDetail     : <==      Total: 1
+2023-05-19 15:02:23.374 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardDetailFileList   : ==>  Preparing: SELECT BOARD_ID, FILE_ID, FILE_NAME, FILE_SIZE, FILE_CONTENT_TYPE, FILE_URL, REG_DT FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 15:02:23.374 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardDetailFileList   : ==> Parameters: 3413(Integer)
+2023-05-19 15:02:23.375 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardDetailFileList   : <==      Total: 0
+2023-05-19 15:02:31.797 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListSearchWord   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ AND b.TITLE LIKE CONCAT('%', ? ,'%') ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:02:31.797 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListSearchWord   : ==> Parameters: 112312(String), 10(Integer), 80(Integer)
+2023-05-19 15:02:31.800 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListSearchWord   : <==      Total: 0
+2023-05-19 15:02:31.800 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.d.B.boardListTotalSearchWordCount  : ==>  Preparing: SELECT COUNT(*) FROM BOARD WHERE TITLE LIKE CONCAT('%', ? ,'%')
+2023-05-19 15:02:31.800 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.d.B.boardListTotalSearchWordCount  : ==> Parameters: 112312(String)
+2023-05-19 15:02:31.801 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.d.B.boardListTotalSearchWordCount  : <==      Total: 1
+2023-05-19 15:04:25.892 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:25.893 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:04:25.894 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:25.895 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:25.895 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:25.897 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:26.213 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:26.213 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:04:26.214 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:26.214 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:26.214 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:26.216 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:28.383 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:28.383 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 50(Integer)
+2023-05-19 15:04:28.385 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:28.385 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:28.385 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:28.387 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:28.901 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:28.901 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 60(Integer)
+2023-05-19 15:04:28.902 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:28.903 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:28.903 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:28.905 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:29.148 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:29.148 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 20(Integer)
+2023-05-19 15:04:29.149 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:29.150 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:29.150 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:29.152 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:29.380 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:29.381 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 50(Integer)
+2023-05-19 15:04:29.382 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:29.382 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:29.382 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:29.383 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:29.612 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:29.612 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 50(Integer)
+2023-05-19 15:04:29.613 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:29.614 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:29.614 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:29.615 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:29.852 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:29.853 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 30(Integer)
+2023-05-19 15:04:29.854 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:29.854 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:29.854 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:29.856 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:30.253 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:30.253 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 50(Integer)
+2023-05-19 15:04:30.254 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:30.255 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:30.255 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:30.257 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:30.461 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:30.461 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 50(Integer)
+2023-05-19 15:04:30.462 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:30.462 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:30.462 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:30.464 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:30.699 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:30.700 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 30(Integer)
+2023-05-19 15:04:30.701 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:30.701 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:30.701 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:30.703 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:30.885 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:30.885 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 50(Integer)
+2023-05-19 15:04:30.886 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:30.886 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:30.886 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:30.888 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:31.213 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:31.213 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 70(Integer)
+2023-05-19 15:04:31.214 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:31.214 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:31.214 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:31.216 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:31.566 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:31.566 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 30(Integer)
+2023-05-19 15:04:31.567 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:31.567 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:31.567 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:31.569 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:31.764 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:31.764 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 20(Integer)
+2023-05-19 15:04:31.765 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:31.765 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:31.765 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:31.768 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:32.950 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:32.950 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 50(Integer)
+2023-05-19 15:04:32.951 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:32.951 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:32.951 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:32.953 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:33.543 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:33.543 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 50(Integer)
+2023-05-19 15:04:33.544 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:33.544 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:33.544 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:33.546 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:34.079 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:34.079 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 60(Integer)
+2023-05-19 15:04:34.080 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:34.080 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:34.080 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:34.082 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:34.916 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:34.917 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:04:34.918 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:34.918 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:34.918 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:34.920 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:36.239 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:36.239 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 50(Integer)
+2023-05-19 15:04:36.240 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:36.241 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:36.241 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:36.243 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:37.654 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:37.654 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 50(Integer)
+2023-05-19 15:04:37.656 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:37.656 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:37.656 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:37.658 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:38.142 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:38.142 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 40(Integer)
+2023-05-19 15:04:38.143 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:38.143 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:38.143 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:38.145 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:38.759 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:38.759 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 20(Integer)
+2023-05-19 15:04:38.760 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:38.760 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:38.760 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:38.762 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:39.801 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:39.802 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:04:39.803 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:39.803 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:39.803 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:39.805 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:04:41.021 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:04:41.021 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 80(Integer)
+2023-05-19 15:04:41.022 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:04:41.022 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:04:41.022 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:04:41.024 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:31:30.244 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:31:30.244 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 90(Integer)
+2023-05-19 15:31:30.245 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:31:30.246 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:31:30.246 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:31:30.249 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:38:15.013 DEBUG 12816 --- [http-nio-8080-exec-3] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 15:38:15.013 DEBUG 12816 --- [http-nio-8080-exec-3] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 15:38:15.014 DEBUG 12816 --- [http-nio-8080-exec-3] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 15:38:16.556 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:38:16.556 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:38:16.557 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:38:16.558 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:38:16.558 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:38:16.560 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:38:22.056 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:38:22.056 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 10(Integer)
+2023-05-19 15:38:22.057 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:38:22.058 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:38:22.058 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:38:22.060 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:38:22.696 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:38:22.696 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 20(Integer)
+2023-05-19 15:38:22.697 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:38:22.697 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:38:22.697 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:38:22.699 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:38:23.037 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:38:23.037 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 40(Integer)
+2023-05-19 15:38:23.038 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:38:23.038 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:38:23.038 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:38:23.040 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:38:24.056 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:38:24.056 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 30(Integer)
+2023-05-19 15:38:24.057 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:38:24.057 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:38:24.057 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:38:24.059 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:38:24.983 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:38:24.984 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:38:24.985 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:38:24.985 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:38:24.985 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:38:24.987 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:38:25.866 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:38:25.866 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 20(Integer)
+2023-05-19 15:38:25.867 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:38:25.867 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:38:25.867 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:38:25.870 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:38:26.688 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardUserReadCount    : ==>  Preparing: SELECT count(*) FROM board_user_read WHERE board_id = ? and user_seq = ?
+2023-05-19 15:38:26.688 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardUserReadCount    : ==> Parameters: 3481(Integer), 8(Integer)
+2023-05-19 15:38:26.689 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardUserReadCount    : <==      Total: 1
+2023-05-19 15:38:26.689 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.myboard.dao.BoardDao.boardDetail     : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.BOARD_ID = ? AND b.USER_SEQ = u.USER_SEQ
+2023-05-19 15:38:26.689 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.myboard.dao.BoardDao.boardDetail     : ==> Parameters: 3481(Integer)
+2023-05-19 15:38:26.690 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.myboard.dao.BoardDao.boardDetail     : <==      Total: 1
+2023-05-19 15:38:26.690 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardDetailFileList   : ==>  Preparing: SELECT BOARD_ID, FILE_ID, FILE_NAME, FILE_SIZE, FILE_CONTENT_TYPE, FILE_URL, REG_DT FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 15:38:26.690 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardDetailFileList   : ==> Parameters: 3481(Integer)
+2023-05-19 15:38:26.691 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardDetailFileList   : <==      Total: 0
+2023-05-19 15:38:28.759 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:38:28.759 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:38:28.760 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:38:28.760 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:38:28.760 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:38:28.763 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:38:29.710 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardUserReadCount    : ==>  Preparing: SELECT count(*) FROM board_user_read WHERE board_id = ? and user_seq = ?
+2023-05-19 15:38:29.710 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardUserReadCount    : ==> Parameters: 3508(Integer), 8(Integer)
+2023-05-19 15:38:29.711 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardUserReadCount    : <==      Total: 1
+2023-05-19 15:38:29.711 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardUserReadInsert   : ==>  Preparing: INSERT INTO board_user_read ( board_id, user_seq ) VALUES ( ?, ? )
+2023-05-19 15:38:29.711 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardUserReadInsert   : ==> Parameters: 3508(Integer), 8(Integer)
+2023-05-19 15:38:29.712 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardUserReadInsert   : <==    Updates: 1
+2023-05-19 15:38:29.712 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardReadCountUpdate  : ==>  Preparing: UPDATE board set READ_COUNT = READ_COUNT + 1 WHERE BOARD_ID = ?
+2023-05-19 15:38:29.712 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardReadCountUpdate  : ==> Parameters: 3508(Integer)
+2023-05-19 15:38:29.713 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardReadCountUpdate  : <==    Updates: 1
+2023-05-19 15:38:29.713 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.myboard.dao.BoardDao.boardDetail     : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.BOARD_ID = ? AND b.USER_SEQ = u.USER_SEQ
+2023-05-19 15:38:29.713 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.myboard.dao.BoardDao.boardDetail     : ==> Parameters: 3508(Integer)
+2023-05-19 15:38:29.713 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.myboard.dao.BoardDao.boardDetail     : <==      Total: 1
+2023-05-19 15:38:29.713 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardDetailFileList   : ==>  Preparing: SELECT BOARD_ID, FILE_ID, FILE_NAME, FILE_SIZE, FILE_CONTENT_TYPE, FILE_URL, REG_DT FROM BOARD_FILE WHERE BOARD_ID = ?
+2023-05-19 15:38:29.713 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardDetailFileList   : ==> Parameters: 3508(Integer)
+2023-05-19 15:38:29.714 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardDetailFileList   : <==      Total: 0
+2023-05-19 15:38:37.863 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListSearchWord   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ AND b.TITLE LIKE CONCAT('%', ? ,'%') ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:38:37.863 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListSearchWord   : ==> Parameters: 123(String), 10(Integer), 0(Integer)
+2023-05-19 15:38:37.865 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListSearchWord   : <==      Total: 10
+2023-05-19 15:38:37.866 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.d.B.boardListTotalSearchWordCount  : ==>  Preparing: SELECT COUNT(*) FROM BOARD WHERE TITLE LIKE CONCAT('%', ? ,'%')
+2023-05-19 15:38:37.866 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.d.B.boardListTotalSearchWordCount  : ==> Parameters: 123(String)
+2023-05-19 15:38:37.867 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.d.B.boardListTotalSearchWordCount  : <==      Total: 1
+2023-05-19 15:39:02.419 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.UserDao.userPasswordChange     : ==>  Preparing: update users set user_password = ? where user_email = ?
+2023-05-19 15:39:02.419 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.UserDao.userPasswordChange     : ==> Parameters: qwer1234(String), mu@ya.ho(String)
+2023-05-19 15:39:02.420 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.UserDao.userPasswordChange     : <==    Updates: 1
+2023-05-19 15:39:11.254 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 15:39:11.254 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 15:39:11.255 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 15:39:11.255 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 15:39:11.256 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 15:39:11.258 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 15:39:19.104 DEBUG 12816 --- [http-nio-8080-exec-8] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 15:39:19.104 DEBUG 12816 --- [http-nio-8080-exec-8] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 15:39:19.105 DEBUG 12816 --- [http-nio-8080-exec-8] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 15:42:56.219  INFO 12816 --- [http-nio-8080-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x00{0x010x000x00w0x030x030xbc20xbc0x1e0x160x1e7?0xb5:0x06X0x1b0x8b0x7f7Zj0xe3;0xaeA60xf0'0xc00x810xbcW0xe1=0x920x000x000x1a0xc0/0xc0+0xc00x110xc00x070xc00x130xc00x090xc00x140xc00x0a0x000x050x00/0x0050xc00x120x000x0a0x010x000x0040x000x050x000x050x010x000x000x000x000x000x0a0x000x080x000x060x000x170x000x180x000x190x000x0b0x000x020x010x000x000x0d0x000x100x000x0e0x040x010x040x030x020x010x020x030x040x010x050x010x060x010xff0x010x000x010x00...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:262) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+
+2023-05-19 15:56:25.316 DEBUG 12816 --- [http-nio-8080-exec-2] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 15:56:25.316 DEBUG 12816 --- [http-nio-8080-exec-2] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 15:56:25.317 DEBUG 12816 --- [http-nio-8080-exec-2] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 15:56:27.714 DEBUG 12816 --- [http-nio-8080-exec-3] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 15:56:27.714 DEBUG 12816 --- [http-nio-8080-exec-3] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 15:56:27.715 DEBUG 12816 --- [http-nio-8080-exec-3] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 15:56:40.560 DEBUG 12816 --- [http-nio-8080-exec-4] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 15:56:40.560 DEBUG 12816 --- [http-nio-8080-exec-4] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 15:56:40.561 DEBUG 12816 --- [http-nio-8080-exec-4] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 15:57:09.272 DEBUG 12816 --- [http-nio-8080-exec-5] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 15:57:09.272 DEBUG 12816 --- [http-nio-8080-exec-5] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 15:57:09.273 DEBUG 12816 --- [http-nio-8080-exec-5] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 15:57:10.784 DEBUG 12816 --- [http-nio-8080-exec-6] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 15:57:10.784 DEBUG 12816 --- [http-nio-8080-exec-6] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 15:57:10.785 DEBUG 12816 --- [http-nio-8080-exec-6] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 15:57:11.575 DEBUG 12816 --- [http-nio-8080-exec-7] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 15:57:11.575 DEBUG 12816 --- [http-nio-8080-exec-7] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 15:57:11.576 DEBUG 12816 --- [http-nio-8080-exec-7] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 15:57:12.218 DEBUG 12816 --- [http-nio-8080-exec-8] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 15:57:12.218 DEBUG 12816 --- [http-nio-8080-exec-8] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 15:57:12.219 DEBUG 12816 --- [http-nio-8080-exec-8] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 15:57:13.592 DEBUG 12816 --- [http-nio-8080-exec-9] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 15:57:13.592 DEBUG 12816 --- [http-nio-8080-exec-9] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 15:57:13.593 DEBUG 12816 --- [http-nio-8080-exec-9] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 15:57:14.264 DEBUG 12816 --- [http-nio-8080-exec-10] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 15:57:14.264 DEBUG 12816 --- [http-nio-8080-exec-10] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 15:57:14.264 DEBUG 12816 --- [http-nio-8080-exec-10] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 16:31:24.145 DEBUG 12816 --- [http-nio-8080-exec-3] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 16:31:24.145 DEBUG 12816 --- [http-nio-8080-exec-3] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 16:31:24.146 DEBUG 12816 --- [http-nio-8080-exec-3] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 16:49:40.991 DEBUG 12816 --- [http-nio-8080-exec-6] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 16:49:40.991 DEBUG 12816 --- [http-nio-8080-exec-6] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 16:49:40.993 DEBUG 12816 --- [http-nio-8080-exec-6] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 16:49:46.527 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 16:49:46.527 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 16:49:46.528 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 16:49:46.528 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 16:49:46.528 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 16:49:46.530 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 16:49:48.442 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 16:49:48.442 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 40(Integer)
+2023-05-19 16:49:48.443 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 16:49:48.443 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 16:49:48.443 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 16:49:48.445 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 16:49:56.835 DEBUG 12816 --- [http-nio-8080-exec-1] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 16:49:56.835 DEBUG 12816 --- [http-nio-8080-exec-1] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 16:49:56.836 DEBUG 12816 --- [http-nio-8080-exec-1] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 16:50:00.506 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 16:50:00.506 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 16:50:00.507 DEBUG 12816 --- [http-nio-8080-exec-4] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 16:50:00.508 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 16:50:00.508 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 16:50:00.510 DEBUG 12816 --- [http-nio-8080-exec-4] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 16:50:03.599 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 16:50:03.600 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 16:50:03.601 DEBUG 12816 --- [http-nio-8080-exec-9] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 16:50:03.601 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 16:50:03.601 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 16:50:03.604 DEBUG 12816 --- [http-nio-8080-exec-9] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:35:35.671  INFO 12816 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-19 17:35:35.742  INFO 12816 --- [Thread-6] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-19 17:35:35.744  INFO 12816 --- [Thread-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-19 17:35:35.749  WARN 12816 --- [Thread-6] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2023-05-19 17:35:35.754  INFO 12816 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-19 17:35:35.762  INFO 12816 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-05-19 17:35:35.921  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Starting EnjoyTripBackApplication using Java 1.8.0_192 on DESKTOP-DOGVPUB with PID 12816 (C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack\bin\main started by SSAFY in C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack)
+2023-05-19 17:35:35.921 DEBUG 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Running with Spring Boot v2.7.11, Spring v5.3.27
+2023-05-19 17:35:35.921  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-05-19 17:35:36.182  INFO 12816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-19 17:35:36.183  INFO 12816 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-19 17:35:36.183  INFO 12816 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-19 17:35:36.194  INFO 12816 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-19 17:35:36.194  INFO 12816 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 270 ms
+2023-05-19 17:35:36.320  INFO 12816 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-19 17:35:36.327  INFO 12816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-19 17:35:36.330  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Started EnjoyTripBackApplication in 0.44 seconds (JVM running for 12339.52)
+2023-05-19 17:35:36.331  INFO 12816 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-19 17:36:18.831  INFO 12816 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-19 17:36:18.894  INFO 12816 --- [Thread-8] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-19 17:36:19.000  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Starting EnjoyTripBackApplication using Java 1.8.0_192 on DESKTOP-DOGVPUB with PID 12816 (C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack\bin\main started by SSAFY in C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack)
+2023-05-19 17:36:19.000 DEBUG 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Running with Spring Boot v2.7.11, Spring v5.3.27
+2023-05-19 17:36:19.000  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-05-19 17:36:19.232  INFO 12816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-19 17:36:19.232  INFO 12816 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-19 17:36:19.232  INFO 12816 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-19 17:36:19.243  INFO 12816 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-19 17:36:19.243  INFO 12816 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 241 ms
+2023-05-19 17:36:19.338  INFO 12816 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-19 17:36:19.344  INFO 12816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-19 17:36:19.348  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Started EnjoyTripBackApplication in 0.375 seconds (JVM running for 12382.538)
+2023-05-19 17:36:19.349  INFO 12816 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-19 17:36:26.961  INFO 12816 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-19 17:36:27.025  INFO 12816 --- [Thread-12] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-19 17:36:27.142  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Starting EnjoyTripBackApplication using Java 1.8.0_192 on DESKTOP-DOGVPUB with PID 12816 (C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack\bin\main started by SSAFY in C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack)
+2023-05-19 17:36:27.142 DEBUG 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Running with Spring Boot v2.7.11, Spring v5.3.27
+2023-05-19 17:36:27.142  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-05-19 17:36:27.366  INFO 12816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-19 17:36:27.367  INFO 12816 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-19 17:36:27.367  INFO 12816 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-19 17:36:27.382  INFO 12816 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-19 17:36:27.382  INFO 12816 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 236 ms
+2023-05-19 17:36:27.477  INFO 12816 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-19 17:36:27.483  INFO 12816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-19 17:36:27.485  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Started EnjoyTripBackApplication in 0.368 seconds (JVM running for 12390.676)
+2023-05-19 17:36:27.486  INFO 12816 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-19 17:36:44.266  INFO 12816 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-19 17:36:44.326  INFO 12816 --- [Thread-16] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-19 17:36:44.425  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Starting EnjoyTripBackApplication using Java 1.8.0_192 on DESKTOP-DOGVPUB with PID 12816 (C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack\bin\main started by SSAFY in C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack)
+2023-05-19 17:36:44.425 DEBUG 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Running with Spring Boot v2.7.11, Spring v5.3.27
+2023-05-19 17:36:44.425  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-05-19 17:36:44.637  INFO 12816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-19 17:36:44.637  INFO 12816 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-19 17:36:44.637  INFO 12816 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-05-19 17:36:44.648  INFO 12816 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-19 17:36:44.648  INFO 12816 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 221 ms
+2023-05-19 17:36:44.737  INFO 12816 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-19 17:36:44.743  INFO 12816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-19 17:36:44.746  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Started EnjoyTripBackApplication in 0.345 seconds (JVM running for 12407.936)
+2023-05-19 17:36:44.746  INFO 12816 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-19 17:39:14.181  INFO 12816 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-19 17:39:14.182  INFO 12816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-19 17:39:14.183  INFO 12816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-19 17:39:14.188  INFO 12816 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-05-19 17:39:14.197  INFO 12816 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-05-19 17:39:14.197 DEBUG 12816 --- [http-nio-8080-exec-2] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 17:39:14.198 DEBUG 12816 --- [http-nio-8080-exec-2] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 17:39:14.198 DEBUG 12816 --- [http-nio-8080-exec-2] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 17:39:16.774 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:39:16.775 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 17:39:16.776 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:39:16.776 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:39:16.777 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:39:16.779 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:39:18.125 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:39:18.125 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 60(Integer)
+2023-05-19 17:39:18.128 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:39:18.128 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:39:18.128 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:39:18.130 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:39:19.452 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:39:19.453 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 100(Integer)
+2023-05-19 17:39:19.453 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:39:19.454 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:39:19.454 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:39:19.456 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:39:21.316 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:39:21.317 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 90(Integer)
+2023-05-19 17:39:21.318 DEBUG 12816 --- [http-nio-8080-exec-8] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:39:21.318 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:39:21.318 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:39:21.320 DEBUG 12816 --- [http-nio-8080-exec-8] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:39:26.281 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:39:26.281 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 17:39:26.282 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:39:26.282 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:39:26.282 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:39:26.285 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:39:28.505 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:39:28.506 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 17:39:28.506 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:39:28.507 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:39:28.507 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:39:28.509 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:39:29.056 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:39:29.056 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 17:39:29.057 DEBUG 12816 --- [http-nio-8080-exec-7] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:39:29.057 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:39:29.057 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:39:29.059 DEBUG 12816 --- [http-nio-8080-exec-7] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:39:29.832 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:39:29.833 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 17:39:29.834 DEBUG 12816 --- [http-nio-8080-exec-10] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:39:29.835 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:39:29.835 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:39:29.836 DEBUG 12816 --- [http-nio-8080-exec-10] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:39:31.240 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:39:31.240 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 17:39:31.241 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:39:31.241 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:39:31.241 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:39:31.243 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:39:31.967 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:39:31.967 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 17:39:31.968 DEBUG 12816 --- [http-nio-8080-exec-2] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:39:31.968 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:39:31.968 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:39:31.970 DEBUG 12816 --- [http-nio-8080-exec-2] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:39:33.623 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:39:33.624 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 17:39:33.625 DEBUG 12816 --- [http-nio-8080-exec-3] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:39:33.625 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:39:33.625 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:39:33.627 DEBUG 12816 --- [http-nio-8080-exec-3] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:42:29.730 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:42:29.730 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 17:42:29.731 DEBUG 12816 --- [http-nio-8080-exec-6] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:42:29.732 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:42:29.732 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:42:29.733 DEBUG 12816 --- [http-nio-8080-exec-6] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:42:32.682 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:42:32.682 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 17:42:32.683 DEBUG 12816 --- [http-nio-8080-exec-5] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:42:32.683 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:42:32.684 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:42:32.686 DEBUG 12816 --- [http-nio-8080-exec-5] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:42:36.046 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==>  Preparing: SELECT b.BOARD_ID, b.USER_SEQ, u.USER_NAME, u.USER_PROFILE_IMAGE_URL, b.TITLE, b.CONTENT, b.REG_DT, b.READ_COUNT FROM BOARD b, USERS u WHERE b.USER_SEQ = u.USER_SEQ ORDER BY b.BOARD_ID DESC LIMIT ? OFFSET ?
+2023-05-19 17:42:36.046 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : ==> Parameters: 10(Integer), 0(Integer)
+2023-05-19 17:42:36.047 DEBUG 12816 --- [http-nio-8080-exec-1] c.mycom.myboard.dao.BoardDao.boardList   : <==      Total: 10
+2023-05-19 17:42:36.047 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==>  Preparing: SELECT COUNT(*) FROM BOARD
+2023-05-19 17:42:36.048 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : ==> Parameters: 
+2023-05-19 17:42:36.049 DEBUG 12816 --- [http-nio-8080-exec-1] c.m.m.dao.BoardDao.boardListTotalCount   : <==      Total: 1
+2023-05-19 17:42:41.515 DEBUG 12816 --- [http-nio-8080-exec-2] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 17:42:41.515 DEBUG 12816 --- [http-nio-8080-exec-2] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 17:42:41.516 DEBUG 12816 --- [http-nio-8080-exec-2] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 17:42:45.995 DEBUG 12816 --- [http-nio-8080-exec-3] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 17:42:45.995 DEBUG 12816 --- [http-nio-8080-exec-3] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 17:42:45.995 DEBUG 12816 --- [http-nio-8080-exec-3] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 17:42:49.299 DEBUG 12816 --- [http-nio-8080-exec-4] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 17:42:49.300 DEBUG 12816 --- [http-nio-8080-exec-4] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 17:42:49.300 DEBUG 12816 --- [http-nio-8080-exec-4] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 17:43:07.044 DEBUG 12816 --- [http-nio-8080-exec-7] com.mycom.myboard.dao.LoginDao.login     : ==>  Preparing: select user_seq, user_name, user_password, user_email, user_profile_image_url, user_register_date from users where user_email = ?
+2023-05-19 17:43:07.045 DEBUG 12816 --- [http-nio-8080-exec-7] com.mycom.myboard.dao.LoginDao.login     : ==> Parameters: mu@ya.ho(String)
+2023-05-19 17:43:07.045 DEBUG 12816 --- [http-nio-8080-exec-7] com.mycom.myboard.dao.LoginDao.login     : <==      Total: 1
+2023-05-19 17:43:44.273  INFO 12816 --- [http-nio-8080-exec-10] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x040x010x010xbbh0x150x1by0x00...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:262) ~[tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.74.jar:9.0.74]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_192]
+
+2023-05-19 17:45:50.411  INFO 12816 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-05-19 17:45:50.472  INFO 12816 --- [Thread-20] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-19 17:45:50.475  INFO 12816 --- [Thread-20] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-19 17:45:50.481  WARN 12816 --- [Thread-20] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-2 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2023-05-19 17:45:50.485  INFO 12816 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-05-19 17:45:50.489  INFO 12816 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-05-19 17:45:50.585  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Starting EnjoyTripBackApplication using Java 1.8.0_192 on DESKTOP-DOGVPUB with PID 12816 (C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack\bin\main started by SSAFY in C:\Users\SSAFY\firstSemaster\vue-final-project\enjoytrip_final_02_jmj_cjs\backend\EnjoyTripBack)
+2023-05-19 17:45:50.585 DEBUG 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : Running with Spring Boot v2.7.11, Spring v5.3.27
+2023-05-19 17:45:50.585  INFO 12816 --- [restartedMain] c.m.myboard.EnjoyTripBackApplication     : No active profile set, falling back to 1 default profile: "default"

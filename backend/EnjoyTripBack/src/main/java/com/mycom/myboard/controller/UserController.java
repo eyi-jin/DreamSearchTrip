@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -44,7 +45,12 @@ public class UserController {
 		}
 		return map;
 	}
-	
+	@GetMapping(value="/users/emailcheck/{userEmail}")
+	public Map<String, String> emailCheck(@PathVariable String userEmail){
+		Map<String, String> map = new HashMap<>();
+		// 아이디 중복 체크 하기
+		return map;
+	}
 	@PostMapping(value="/users/changepwd")
 	public Map<String, String> changePwd(@RequestBody UserDto userDto){
 		Map<String, String> map = new HashMap<>();

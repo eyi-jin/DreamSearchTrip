@@ -18,17 +18,15 @@
 
         <div class="mx-3">
             <search-trip-form></search-trip-form>
-            <kakao-map></kakao-map>
         </div>
     </div>
 </template>
 
 <script>
-import KakaoMap from "./ui/KakaoMap.vue";
 import SearchTripForm from "./ui/SearchTripForm.vue";
 
 export default {
-    components: { KakaoMap, SearchTripForm },
+    components: { SearchTripForm },
     data() {
         return {
             message: "",

@@ -19,11 +19,15 @@
             </select>
         </form>
         <button id="btnSearch" type="button" class="col-md-1 btn btn-primary my-3">검색</button>
+        <div>
+            <kakao-map :trips="tripList"></kakao-map>
+        </div>
     </div>
 </template>
 
 <script>
 import http from "@/components/common/axios";
+import KakaoMap from "./KakaoMap.vue";
 
 export default {
     data() {
@@ -35,7 +39,11 @@ export default {
             cat1: "",
             cat2: "",
             cat3: "",
+            tripList: [],
         };
+    },
+    components: {
+        KakaoMap,
     },
     async mounted() {
         await this.getArea1List();
@@ -74,6 +82,9 @@ export default {
 
             let itemList = data.response.body.items.item;
             console.log(itemList);
+
+            // tripList에 객체 추가하기
+            itemList.forEach((tripItem) => this.tripList.push(tripItem));
         },
 
         getArea1List: async function () {

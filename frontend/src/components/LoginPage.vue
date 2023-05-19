@@ -45,7 +45,9 @@
                     <button @click="login" type="button" class="btn btn-primary">Login</button>
                   </span>
                   <span class="m-1">
-                    <button type="button" class="btn btn-primary">Sign Up</button>
+                    <button type="button" class="btn btn-primary" @click="signupMove">
+                      Sign Up
+                    </button>
                   </span>
                 </div>
               </div>
@@ -97,6 +99,9 @@ export default {
     logout() {
       sessionStorage.removeItem("userEmail");
       sessionStorage.removeItem("userName");
+    },
+    signupMove() {
+      this.$router.push("/signup");
     },
   },
   created() {

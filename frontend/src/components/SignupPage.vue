@@ -115,6 +115,13 @@ export default {
         this.checkEmail = true;
       }
     },
+    checkPassword() {
+      if (this.userPassword === this.userPasswordCheck) {
+        return true;
+      } else {
+        return false;
+      }
+    },
     passwordTest() {
       const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
       if (!this.userPassword || passwordRegex.test(this.userPassword)) {

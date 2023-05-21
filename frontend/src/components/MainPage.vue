@@ -34,7 +34,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  created(){
+    if (!sessionStorage.getItem("userName")) {
+      this.$router.push("/login");
+    }
+  }
+};
 </script>
 
 <style></style>

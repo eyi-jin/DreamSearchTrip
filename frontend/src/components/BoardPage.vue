@@ -29,8 +29,8 @@
         />
         <button @click="boardList" class="btn btn-primary" type="button">Search</button>
       </div>
-
-      <table class="table table-hover">
+      <card-view v-bind:list="list" @call-parent-detail="boardDetail"></card-view>
+      <!-- <table class="table table-hover">
         <thead>
           <tr>
             <th>#</th>
@@ -49,7 +49,7 @@
             <td>{{ board.readCount }}</td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
       <pagination-ui
         v-bind:listRowCount="listRowCount"
         v-bind:pageLinkCount="pageLinkCount"
@@ -82,9 +82,10 @@ import DetailModal from "./modals/DetailModal.vue";
 import InsertModal from "./modals/InsertModal.vue";
 import UpdateModal from "@/components/modals/UpdateModal.vue";
 import PaginationUi from "@/components/ui/PaginationUi.vue";
+import CardView from "@/components/ui/CardView.vue";
 import { Modal } from "bootstrap";
 export default {
-  components: { InsertModal, DetailModal, UpdateModal, PaginationUi },
+  components: { InsertModal, DetailModal, UpdateModal, PaginationUi, CardView },
   data() {
     return {
       // modal

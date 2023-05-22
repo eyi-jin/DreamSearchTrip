@@ -1,8 +1,12 @@
 <template>
     <div class="d-flex">
         <!-- 사이드바 -->
-        <div class="col-sm-2 sidebar" id="placesList" style="background-color: #f7f7f7; z-index: 2">
-            <div class="sidebar-box bg-white p-4 rounded job-position m-3">
+        <div
+            class="col-sm-2 scroll"
+            id="placesList"
+            style="background-color: #f7f7f7; z-index: 2; overflow: scroll; height: 700px"
+        >
+            <div class="bg-white p-4 rounded job-position m-3">
                 <div class="row">
                     <div class="">
                         <h5>Product Designer</h5>
@@ -11,13 +15,14 @@
                                 <span class="icon-room me-2"></span> <span>Remote</span>
                             </div>
                             <div class="d-flex align-items-center">
-                                <span class="icon-clock-o me-2"></span> <span>Fulltime</span>
+                                <span class="icon-clock-o me-2"></span>
+                                <span>Fulltime</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="sidebar-box bg-white p-4 rounded job-position m-3">
+            <div class="bg-white p-4 rounded job-position m-3">
                 <div class="row">
                     <div class="col-sm-2">
                         <h5>Product Designer</h5>
@@ -26,13 +31,15 @@
                                 <span class="icon-room me-2"></span> <span>Remote</span>
                             </div>
                             <div class="d-flex align-items-center">
-                                <span class="icon-clock-o me-2"></span> <span>Fulltime</span>
+                                <span class="icon-clock-o me-2"></span>
+                                <span>Fulltime</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- 사이드바 -->
         <div class="col-sm-12 sidebar" id="map"></div>
     </div>
 </template>
@@ -103,7 +110,7 @@ export default {
         },
         getListItem(places) {
             var el = document.createElement("div"),
-                itemStr = ` <div class="sidebar-box bg-white p-4 rounded job-position m-3">
+                itemStr = ` <div class="bg-white p-4 rounded job-position m-3">
 	                    <div class="row">
 		                  <div class="col-lg-12">
 			                <h5>${places.title}</h5> `;

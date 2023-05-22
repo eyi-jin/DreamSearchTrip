@@ -150,6 +150,13 @@ export default {
     userPassword() {
       this.passwordTest();
     },
+    userPasswordCheck() {
+      if (this.userPassword !== "" && !this.checkPassword()) {
+        this.checkPwd = true;
+      } else {
+        this.checkPwd = false;
+      }
+    },
   },
 };
 </script>

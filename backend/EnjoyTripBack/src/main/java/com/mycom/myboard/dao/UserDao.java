@@ -10,4 +10,5 @@ public interface UserDao {
 	
 	int userPasswordChange(UserDto userDto);
 	int userDelete(String userEmail);
+	int userIdCheck(String userEmail);
 }

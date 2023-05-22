@@ -9,4 +9,5 @@ public interface UserService {
 	int userRegister(UserDto userDto);
 	int userPasswordChange(UserDto userDto);
 	int userDelete(String userEmail);
+	int userIdCheck(String userEmail);
 }

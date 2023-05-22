@@ -76,7 +76,7 @@
                     <button @click="loginMove" type="button" class="btn btn-primary">Login</button>
                   </span>
                   <span class="m-1">
-                    <button type="button" class="btn btn-primary">Sign Up</button>
+                    <button type="button" class="btn btn-primary" @click="signup">Sign Up</button>
                   </span>
                 </div>
               </div>
@@ -90,6 +90,8 @@
 </template>
 
 <script>
+import axios from "./common/axios";
+
 export default {
   data() {
     return {
@@ -108,6 +110,8 @@ export default {
       this.$router.push("/login");
     },
     emailCheck() {
+      this.checkEmail = false;
+      this.emailConfirm = 0;
       const reg_email = /^[A-Za-z0-9_\\.\\-]+@[A-Za-z0-9\\-]+\.[A-Za-z0-9\\-]+/;
       if (!this.userEmail || reg_email.test(this.userEmail)) {
         this.checkEmail = false;
@@ -130,16 +134,67 @@ export default {
         this.pwdTest = true;
       }
     },
-    confirmEmail() {
+    async confirmEmail() {
       // 0일때는 누르지 않았을 때
       // 1일때는 이미 사용중인 이메일
       // 2일때는 사용가능한 이메일
       // 3일때는 이메일 공백이거나 형식이 잘 못 됨
       // 아이디 중복체크하기
-      if (this.checkEmail === false) {
-        this.emailConfirm = 2;
+      if (this.userEmail && this.checkEmail === false) {
+        let response = await axios.get("/users/idcheck/" + this.userEmail);
+        let { data } = response;
+        if (data.result === "success") {
+          this.emailConfirm = 2;
+        } else {
+          this.emailConfirm = 1;
+        }
       } else {
         this.emailConfirm = 3;
+      }
+    },
+    async signup() {
+      console.log(
+        this.userName +
+          " " +
+          this.userEmail +
+          " " +
+          this.emailConfirm +
+          " " +
+          this.userPassword +
+          " " +
+          this.userPasswordCheck +
+          " " +
+          this.checkPwd +
+          " " +
+          this.pwdTest +
+          " " +
+          this.checkEmail
+      );
+      if (
+        this.userName &&
+        this.userEmail &&
+        this.emailConfirm == 2 &&
+        this.userPassword &&
+        this.userPasswordCheck &&
+        this.checkPwd === false &&
+        this.pwdTest === false &&
+        this.checkEmail === false
+      ) {
+        let params = {
+          userEmail: this.userEmail,
+          userName: this.userName,
+          userPassword: this.userPassword,
+        };
+        let response = await axios.post("/users", params);
+        let { data } = response;
+        if (data.result == "success") {
+          this.$alertify.success("회원가입 되었습니다.");
+          this.$router.push("/login");
+        } else {
+          this.$alertify.error("정확히 기입해주세요.");
+        }
+      } else {
+        this.$alertify.error("정확히 기입해주세요.");
       }
     },
   },

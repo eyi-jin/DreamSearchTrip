@@ -17,5 +17,11 @@
 		delete from users
 		 where user_email = #{userEmail}
 	</delete>
+	
+	<select id="userIdCheck" parameterType="string" resultType="int">
+		select count(*)
+		  from users
+		 where user_email = #{userEmail}
+	</select>
 
 </mapper>

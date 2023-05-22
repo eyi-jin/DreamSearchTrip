@@ -36,7 +36,7 @@ public class UserController {
 	
 	private static final int SUCCESS = 1;
 	@PostMapping(value="/users")
-	public Map<String, String> register(UserDto userDto) {
+	public Map<String, String> register(@RequestBody UserDto userDto) {
 		Map<String, String> map = new HashMap<>();
 		if(userService.userRegister(userDto) == SUCCESS) {
 			map.put("result", "success");
@@ -66,6 +66,16 @@ public class UserController {
 	public Map<String, String> userDelete(@PathVariable(value="userEmail") String userEmail){
 		Map<String, String> map = new HashMap<>();
 		if(userService.userDelete(userEmail) == SUCCESS) {
+			map.put("result", "success");
+		}else {
+			map.put("result", "fail");
+		}
+		return map;
+	}
+	@GetMapping(value="/users/idcheck/{userEmail}")
+	public Map<String, String> userIdCheck(@PathVariable(value="userEmail") String userEmail){
+		Map<String, String> map = new HashMap<>();
+		if(userService.userIdCheck(userEmail) == 0) {
 			map.put("result", "success");
 		}else {
 			map.put("result", "fail");

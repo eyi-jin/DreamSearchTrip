@@ -22,16 +22,16 @@ import com.mycom.myboard.service.BoardService;
 // ResponseEntity 사용
 // 실패인 경우 모두 404 로
 @RestController
-@CrossOrigin(
-		origins="http://localhost:5500", 
-		allowCredentials="true",
-		allowedHeaders="*",
-		methods= {RequestMethod.GET
-				, RequestMethod.POST
-				, RequestMethod.PUT
-				, RequestMethod.DELETE
-				, RequestMethod.OPTIONS
-				,RequestMethod.HEAD})
+//@CrossOrigin(
+//		origins="*", 
+//		allowCredentials="true",
+//		allowedHeaders="*",
+//		methods= {RequestMethod.GET
+//				, RequestMethod.POST
+//				, RequestMethod.PUT
+//				, RequestMethod.DELETE
+//				, RequestMethod.OPTIONS
+//				,RequestMethod.HEAD})
 public class BoardController {
 
 	@Autowired

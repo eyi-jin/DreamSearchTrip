@@ -7,7 +7,9 @@ import MainPage from "@/components/MainPage.vue";
 import SearchPage from "@/components/SearchPage.vue";
 import MyPage from "@/components/MyPage";
 import LoginPage from "@/components/LoginPage.vue";
-import HotplacePage from "@/components/HotplacePage.vue";
+import HotplaceView from "@/components/my/HotplaceView.vue";
+import MyInfoView from "@/components/my/MyInfoView.vue";
+import MyTripView from "@/components/my/MyTripView.vue";
 import BoardPage from "@/components/BoardPage.vue";
 import SignupPage from "@/components/SignupPage.vue";
 import WeatherPage from "@/components/WeatherPage.vue";
@@ -30,14 +32,13 @@ export default new VueRouter({
       component: LoginPage,
     },
     {
-      name: "HotplacePage",
-      path: "/hotplace",
-      component: HotplacePage,
-    },
-    {
-      name: "MyPage",
       path: "/my",
       component: MyPage,
+      children: [
+        { name: "MyInfoView", path: "", component: MyInfoView },
+        { name: "HotplaceView", path: "hotplace", component: HotplaceView },
+        { name: "MyTripView", path: "trip", component: MyTripView },
+      ],
     },
     {
       name: "SearchPage",

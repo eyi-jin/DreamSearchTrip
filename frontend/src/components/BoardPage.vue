@@ -94,7 +94,7 @@ export default {
       updateModal: null,
       // list
       list: [],
-      limit: 10,
+      limit: 12,
       offset: 0,
       searchWord: "",
 
@@ -159,6 +159,7 @@ export default {
         };
         this.board = boardNew;
         this.detailModal.show();
+        this.boardList();
       }
     },
     async boardDelete() {

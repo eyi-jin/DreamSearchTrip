@@ -15,7 +15,7 @@
               into your mouth.
             </p>
 
-            <div data-aos="fade-up">
+            <!-- <div data-aos="fade-up">
               <a
                 href="https://www.youtube.com/watch?v=5n-e6lOhVq0"
                 class="play-button align-items-center d-flex glightbox3"
@@ -25,7 +25,7 @@
                 </span>
                 <span class="caption">Watch Video</span>
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -35,11 +35,11 @@
 
 <script>
 export default {
-  created(){
+  created() {
     if (!sessionStorage.getItem("userName")) {
       this.$router.push("/login");
     }
-  }
+  },
 };
 </script>
 

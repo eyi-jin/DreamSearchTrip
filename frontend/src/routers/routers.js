@@ -10,6 +10,7 @@ import LoginPage from "@/components/LoginPage.vue";
 import HotplacePage from "@/components/HotplacePage.vue";
 import BoardPage from "@/components/BoardPage.vue";
 import SignupPage from "@/components/SignupPage.vue";
+import WeatherPage from "@/components/WeatherPage.vue";
 
 export default new VueRouter({
   routes: [
@@ -47,6 +48,11 @@ export default new VueRouter({
       name: "SignupPage",
       path: "/signup",
       component: SignupPage,
+    },
+    {
+      name: "WeatherPage",
+      path: "/weather",
+      component: WeatherPage,
     },
   ],
 });

@@ -22,6 +22,7 @@
                 <li class=""><router-link to="/">Main</router-link></li>
                 <li><router-link to="/search">SearchTrip</router-link></li>
                 <li><router-link to="/board">Board</router-link></li>
+                <li><router-link to="/weather">weather</router-link></li>
                 <li><router-link to="/my">Mypage</router-link></li>
               </ul>
             </div>

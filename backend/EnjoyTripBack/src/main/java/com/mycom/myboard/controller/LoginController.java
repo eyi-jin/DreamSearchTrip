@@ -16,16 +16,16 @@ import com.mycom.myboard.dto.UserDto;
 import com.mycom.myboard.service.LoginService;
 
 @RestController
-@CrossOrigin(
-		origins="http://localhost:5500", 
-		allowCredentials="true",
-		allowedHeaders="*",
-		methods= {RequestMethod.GET
-				, RequestMethod.POST
-				, RequestMethod.PUT
-				, RequestMethod.DELETE
-				, RequestMethod.OPTIONS
-				,RequestMethod.HEAD})
+//@CrossOrigin(
+//		origins="*", 
+//		allowCredentials="true",
+//		allowedHeaders="*",
+//		methods= {RequestMethod.GET
+//				, RequestMethod.POST
+//				, RequestMethod.PUT
+//				, RequestMethod.DELETE
+//				, RequestMethod.OPTIONS
+//				,RequestMethod.HEAD})
 public class LoginController {
 	
 	@Autowired

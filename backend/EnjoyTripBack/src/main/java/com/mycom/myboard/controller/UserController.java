@@ -19,16 +19,16 @@ import com.mycom.myboard.service.UserService;
 // json response
 // ResponseEntity 사용 X
 @RestController
-@CrossOrigin(
-		origins="http://localhost:5500", 
-		allowCredentials="true",
-		allowedHeaders="*",
-		methods= {RequestMethod.GET
-				, RequestMethod.POST
-				, RequestMethod.PUT
-				, RequestMethod.DELETE
-				, RequestMethod.OPTIONS
-				,RequestMethod.HEAD})
+//@CrossOrigin(
+//		origins="*", 
+//		allowCredentials="true",
+//		allowedHeaders="*",
+//		methods= {RequestMethod.GET
+//				, RequestMethod.POST
+//				, RequestMethod.PUT
+//				, RequestMethod.DELETE
+//				, RequestMethod.OPTIONS
+//				,RequestMethod.HEAD})
 public class UserController {
 	
 	@Autowired

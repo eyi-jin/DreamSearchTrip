@@ -25,6 +25,12 @@
             </a>
             <div class="bg-white m-body">
               <span class="date">May 14, 2020</span>
+              <button
+                class="position-absolute top-50 end-0 m-3 px-1"
+                @click="myTripDelete(fav.favId)"
+              >
+                X
+              </button>
               <h3>
                 <a href="#">{{ fav.favName }}</a>
               </h3>
@@ -56,6 +62,16 @@ export default {
       let { data } = response;
       console.log(data);
       this.list = data;
+    },
+    async myTripDelete(favId) {
+      let url = `/fav/favDelete`;
+      let urlParams = `/` + favId;
+
+      let response = await http.delete(url + urlParams);
+      let { data } = response;
+      console.log(data);
+
+      this.getFavList();
     },
   },
 };

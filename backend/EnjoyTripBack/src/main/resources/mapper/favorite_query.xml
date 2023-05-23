@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.mycom.myboard.dao.FavDao">
+
+	<insert id="favRegister" parameterType="com.mycom.myboard.dto.FavDto">
+        INSERT INTO favorite ( content_id, fav_name, fav_img_url, fav_addr, fav_tel, user_seq )
+                    VALUES (  #{contentId}, #{favName}, #{favImgUrl}, #{favAddr}, #{favTel}, #{userSeq} )
+    </insert>
+
+	<select id="favView" parameterType="int" resultType="com.mycom.myboard.dto.FavDto">
+		SELECT *
+	 	  FROM favorite
+	 	 WHERE user_seq = #{userSeq}
+	</select>
+	
+    <delete id="favDelete" parameterType="int">
+        DELETE FROM favorite WHERE fav_id = #{favId}
+    </delete>
+
+</mapper>

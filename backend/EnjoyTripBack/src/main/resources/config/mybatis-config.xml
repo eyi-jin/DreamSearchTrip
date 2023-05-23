@@ -11,6 +11,7 @@
 		<mapper resource="mapper/user_query.xml"/>
 		<mapper resource="mapper/login_query.xml"/>
 		<mapper resource="mapper/board_query.xml"/>
+		<mapper resource="mapper/favorite_query.xml"/>
 	</mappers>
 
 </configuration>

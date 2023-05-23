@@ -56,6 +56,19 @@ public class BoardController {
 			return ResponseEntity.notFound().build();
 		}
 	}
+	@GetMapping(value="/boards/my")
+	public ResponseEntity<BoardResultDto> boardListMy(BoardParamDto boardParamDto, HttpSession session){
+		
+		BoardResultDto boardResultDto;
+		boardParamDto.setUserSeq( ((UserDto) session.getAttribute("userDto")).getUserSeq());
+		boardResultDto = service.boardListMy(boardParamDto);
+		
+		if( boardResultDto.getResult() == SUCCESS ) {
+			return ResponseEntity.ok().body(boardResultDto);
+		}else {
+			return ResponseEntity.notFound().build();
+		}
+	}
 
 	
 	@GetMapping(value="/boards/{boardId}")

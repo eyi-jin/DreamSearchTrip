@@ -42,6 +42,10 @@ public interface BoardDao {
 	List<BoardDto> boardListSearchWord(BoardParamDto boardParamDto);
 	int boardListTotalSearchWordCount(BoardParamDto boardParamDto); // 검색어 총 건수
 	
+	////// 내가 쓴글 목록
+	List<BoardDto> boardListMy(BoardParamDto boardParamDto);
+	int boardListMyTotalCount(BoardParamDto boardParamDto); // 검색어 총 건수
+	
 	////// 수정
 	int boardUpdate(BoardDto dto);
 	// 첨부파일은?? 조회수는??

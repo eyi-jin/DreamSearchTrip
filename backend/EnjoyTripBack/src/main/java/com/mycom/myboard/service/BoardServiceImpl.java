@@ -20,12 +20,12 @@ import com.mycom.myboard.dto.BoardFileDto;
 import com.mycom.myboard.dto.BoardParamDto;
 import com.mycom.myboard.dto.BoardResultDto;
 
-	@Service
-	public class BoardServiceImpl implements BoardService {
-	
-		@Autowired
-		BoardDao dao;
-		
+@Service
+public class BoardServiceImpl implements BoardService {
+
+	@Autowired
+	BoardDao dao;
+
 // 		// by hardcoding		
 //		String uploadFolder = "upload";
 //	
@@ -40,27 +40,30 @@ import com.mycom.myboard.dto.BoardResultDto;
 //				+ File.separator + "main"
 //				+ File.separator + "resources"
 //				+ File.separator + "static";
-	
-		// by @Value with application.properties
-		@Value("${app.fileupload.uploadDir}")
-		String uploadFolder;
-		
-		@Value("${app.fileupload.uploadPath}")
-		String uploadPath;
-		
-		/* 업로드 후 upload 폴더 refresh 하거나 preferences / workspace - refresh... 2개 option check */
+
+	// by @Value with application.properties
+	@Value("${app.fileupload.uploadDir}")
+	String uploadFolder;
+
+	@Value("${app.fileupload.uploadPath}")
+	String uploadPath;
+
+	/*
+	 * 업로드 후 upload 폴더 refresh 하거나 preferences / workspace - refresh... 2개 option
+	 * check
+	 */
 	private static final int SUCCESS = 1;
 	private static final int FAIL = -1;
 
 	@Override
 	@Transactional
 	public BoardResultDto boardInsert(BoardDto dto, MultipartHttpServletRequest request) {
-		
+
 		BoardResultDto boardResultDto = new BoardResultDto();
-		
+
 		// rollback 할 때 물리적으로 저장된 파일도 삭제하기 위해
 		List<File> rollbackFileList = new ArrayList<>();
-		
+
 		try {
 			dao.boardInsert(dto); // useGeneratedKeys="true" keyProperty="boardId"
 
@@ -68,38 +71,39 @@ import com.mycom.myboard.dto.BoardResultDto;
 			// 테이블에만 insert 된 상태 => rollback 된다.
 //			String s = null;
 //			s.length();
-			
+
 			List<MultipartFile> fileList = request.getFiles("file");
-	
+
 			File uploadDir = new File(uploadPath + File.separator + uploadFolder);
-			if (!uploadDir.exists()) uploadDir.mkdir();
+			if (!uploadDir.exists())
+				uploadDir.mkdir();
 
 			for (MultipartFile part : fileList) {
 
 				int boardId = dto.getBoardId();
-				
+
 				String fileName = part.getOriginalFilename();
-				
-				//Random File Id
+
+				// Random File Id
 				UUID uuid = UUID.randomUUID();
-				
-				//file extension
+
+				// file extension
 				String extension = FilenameUtils.getExtension(fileName); // vs FilenameUtils.getBaseName()
-			
+
 				String savingFileName = uuid + "." + extension;
-			
+
 				File destFile = new File(uploadPath + File.separator + uploadFolder + File.separator + savingFileName);
-				
+
 				// rollback 할 때 물리적으로 저장된 파일도 삭제하기 위해
 				rollbackFileList.add(destFile);
-				
+
 				part.transferTo(destFile);
-		    
-			    // Table Insert
-			    BoardFileDto boardFileDto = new BoardFileDto();
-			    boardFileDto.setBoardId(boardId);
-			    boardFileDto.setFileName(fileName);
-			    boardFileDto.setFileSize(part.getSize());
+
+				// Table Insert
+				BoardFileDto boardFileDto = new BoardFileDto();
+				boardFileDto.setBoardId(boardId);
+				boardFileDto.setFileName(fileName);
+				boardFileDto.setFileSize(part.getSize());
 				boardFileDto.setFileContentType(part.getContentType());
 				String boardFileUrl = uploadFolder + "/" + savingFileName;
 				boardFileDto.setFileUrl(boardFileUrl);
@@ -109,22 +113,22 @@ import com.mycom.myboard.dto.BoardResultDto;
 				// transaction 만 처리하면 테이블과 다르게 물리적으로 저장된 파일은 남아 있다.
 //				String s = null;
 //				s.length();
-				
+
 				dao.boardFileInsert(boardFileDto);
 			}
 
 			boardResultDto.setResult(SUCCESS);
-			
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 
 			// 물리적인 파일도 삭제해 준다.
-			for(File file : rollbackFileList) {	
-				if(file.exists()) {
+			for (File file : rollbackFileList) {
+				if (file.exists()) {
 					file.delete();
 				}
 			}
-			
+
 			boardResultDto.setResult(FAIL);
 		}
 		return boardResultDto;
@@ -132,179 +136,198 @@ import com.mycom.myboard.dto.BoardResultDto;
 
 	@Override
 	@Transactional
-	public BoardResultDto boardUpdate(BoardDto dto, MultipartHttpServletRequest request){
-		
+	public BoardResultDto boardUpdate(BoardDto dto, MultipartHttpServletRequest request) {
+
 		BoardResultDto boardResultDto = new BoardResultDto();
 
 		// rollback 할 때 물리적으로 저장된 파일도 삭제하기 위해
 		List<File> rollbackFileList = new ArrayList<>();
-		
+
 		try {
 			dao.boardUpdate(dto);
 
 			//
 			List<MultipartFile> fileList = request.getFiles("file");
-			
+
 			File uploadDir = new File(uploadPath + File.separator + uploadFolder);
-			if (!uploadDir.exists()) uploadDir.mkdir();
-			
-	    	List<String> fileUrlList = dao.boardFileUrlDeleteList(dto.getBoardId());	
-			for(String fileUrl : fileUrlList) {	
+			if (!uploadDir.exists())
+				uploadDir.mkdir();
+
+			List<String> fileUrlList = dao.boardFileUrlDeleteList(dto.getBoardId());
+			for (String fileUrl : fileUrlList) {
 				File file = new File(uploadPath + File.separator, fileUrl);
-				if(file.exists()) {
+				if (file.exists()) {
 					file.delete();
 				}
 			}
 
-	    	dao.boardFileDelete(dto.getBoardId());
-	    	
-	    	
+			dao.boardFileDelete(dto.getBoardId());
+
 			for (MultipartFile part : fileList) {
 				int boardId = dto.getBoardId();
-				
+
 				String fileName = part.getOriginalFilename();
-				
-				//Random File Id
+
+				// Random File Id
 				UUID uuid = UUID.randomUUID();
-				
-				//file extension
+
+				// file extension
 				String extension = FilenameUtils.getExtension(fileName); // vs FilenameUtils.getBaseName()
-			
+
 				String savingFileName = uuid + "." + extension;
-			
+
 				File destFile = new File(uploadPath + File.separator + uploadFolder + File.separator + savingFileName);
-				
+
 				// rollback 할 때 물리적으로 저장된 파일도 삭제하기 위해
 				rollbackFileList.add(destFile);
 
 				part.transferTo(destFile);
-		    
-			    // Table Insert
-			    BoardFileDto boardFileDto = new BoardFileDto();
-			    boardFileDto.setBoardId(boardId);
-			    boardFileDto.setFileName(fileName);
-			    boardFileDto.setFileSize(part.getSize());
+
+				// Table Insert
+				BoardFileDto boardFileDto = new BoardFileDto();
+				boardFileDto.setBoardId(boardId);
+				boardFileDto.setFileName(fileName);
+				boardFileDto.setFileSize(part.getSize());
 				boardFileDto.setFileContentType(part.getContentType());
 				String boardFileUrl = uploadFolder + "/" + savingFileName;
 				boardFileDto.setFileUrl(boardFileUrl);
-				
+
 				dao.boardFileInsert(boardFileDto);
 			}
 
 			boardResultDto.setResult(SUCCESS);
-			
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
-			
+
 			// 물리적인 파일도 삭제해 준다.
-			for(File file : rollbackFileList) {	
-				if(file.exists()) {
+			for (File file : rollbackFileList) {
+				if (file.exists()) {
 					file.delete();
 				}
 			}
-			
+
 			boardResultDto.setResult(FAIL);
 		}
-		
+
 		return boardResultDto;
 	}
 
 	@Override
 	@Transactional
 	public BoardResultDto boardDelete(int boardId) {
-		
+
 		BoardResultDto boardResultDto = new BoardResultDto();
-		
+
 		try {
 			List<String> fileUrlList = dao.boardFileUrlDeleteList(boardId);
-			for(String fileUrl : fileUrlList) {
-				File file = new File(uploadPath + File.separator, fileUrl);				
-				if(file.exists()) {
+			for (String fileUrl : fileUrlList) {
+				File file = new File(uploadPath + File.separator, fileUrl);
+				if (file.exists()) {
 					file.delete();
 				}
 			}
-			
+
 			dao.boardFileDelete(boardId);
 			dao.boardReadCountDelete(boardId);
-			dao.boardDelete(boardId);		
+			dao.boardDelete(boardId);
 			boardResultDto.setResult(SUCCESS);
-			
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 			boardResultDto.setResult(FAIL);
 		}
-		
+
 		return boardResultDto;
 	}
 
 	@Override
 	@Transactional
 	public BoardResultDto boardDetail(BoardParamDto boardParamDto) {
-		
+
 		BoardResultDto boardResultDto = new BoardResultDto();
-		
+
 		try {
 			int userReadCnt = dao.boardUserReadCount(boardParamDto);
-			if( userReadCnt == 0 ) {
+			if (userReadCnt == 0) {
 				dao.boardUserReadInsert(boardParamDto.getBoardId(), boardParamDto.getUserSeq());
 				dao.boardReadCountUpdate(boardParamDto.getBoardId());
 			}
-			
+
 			BoardDto dto = dao.boardDetail(boardParamDto);
 			List<BoardFileDto> fileList = dao.boardDetailFileList(dto.getBoardId());
 
 			dto.setFileList(fileList);
 			boardResultDto.setDto(dto);
-			
+
 			boardResultDto.setResult(SUCCESS);
-			
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 			boardResultDto.setResult(FAIL);
 		}
-		
+
 		return boardResultDto;
 	}
 
 	@Override
 	public BoardResultDto boardList(BoardParamDto boardParamDto) {
-		
+
 		BoardResultDto boardResultDto = new BoardResultDto();
-		
+
 		try {
 			List<BoardDto> list = dao.boardList(boardParamDto);
-			int count = dao.boardListTotalCount();			
+			int count = dao.boardListTotalCount();
 			boardResultDto.setList(list);
 			boardResultDto.setCount(count);
 			boardResultDto.setResult(SUCCESS);
-			
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 			boardResultDto.setResult(FAIL);
 		}
-		
+
 		return boardResultDto;
 	}
 
 	@Override
 	public BoardResultDto boardListSearchWord(BoardParamDto boardParamDto) {
-		
+
 		BoardResultDto boardResultDto = new BoardResultDto();
-		
+
 		try {
 			List<BoardDto> list = dao.boardListSearchWord(boardParamDto);
 			int count = dao.boardListTotalSearchWordCount(boardParamDto);
-			
+
 			boardResultDto.setList(list);
 			boardResultDto.setCount(count);
-			
+
 			boardResultDto.setResult(SUCCESS);
-		
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 			boardResultDto.setResult(FAIL);
 		}
-		
+
+		return boardResultDto;
+	}
+
+	@Override
+	public BoardResultDto boardListMy(BoardParamDto boardParamDto) {
+		BoardResultDto boardResultDto = new BoardResultDto();
+
+		try {
+			List<BoardDto> list = dao.boardListMy(boardParamDto);
+			int count = dao.boardListMyTotalCount(boardParamDto);
+			boardResultDto.setList(list);
+			boardResultDto.setCount(count);
+			boardResultDto.setResult(SUCCESS);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			boardResultDto.setResult(FAIL);
+		}
+
 		return boardResultDto;
 	}
 

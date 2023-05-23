@@ -23,12 +23,23 @@
 </template>
 
 <script>
+let weatherList = new Map([
+  ["서울", "seoul"],
+  ["인천", "incheon"],
+  ["대구", "daegu"],
+  ["부산", "busan"],
+  ["제주", "jeju"],
+  ["울산", "ulsan"],
+  ["대전", "daejeon"],
+  ["광주", "gwangju"],
+]);
 export default {
   data: function () {
     return {
       api_key: process.env.VUE_APP_WEATHER_API_KEY,
       url_base: "https://api.openweathermap.org/data/2.5/",
       query: "",
+      query2: "",
       weather: {},
     };
   },
@@ -36,7 +47,7 @@ export default {
     fetchWeather: function () {
       console.log(this.api_key);
       //   if (e.key == "Enter") {
-      let fetchUrl = `${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`;
+      let fetchUrl = `${this.url_base}weather?q=${this.query2}&units=metric&APPID=${this.api_key}`;
       fetch(fetchUrl)
         .then((res) => {
           console.log(res);
@@ -81,6 +92,13 @@ export default {
   },
   watch: {
     query() {
+      if (weatherList.get(this.query)) {
+        this.query2 = weatherList.get(this.query);
+      } else {
+        this.query2 = this.query;
+      }
+    },
+    query2() {
       this.fetchWeather();
     },
   },

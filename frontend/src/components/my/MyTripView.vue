@@ -1,5 +1,5 @@
 <template>
-    <div><h1>my trip 입니다!!</h1></div>
+  <div><h1>my trip 입니다!!</h1></div>
 </template>
 
 <script>

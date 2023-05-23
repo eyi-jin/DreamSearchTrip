@@ -92,11 +92,12 @@ export default {
   },
   watch: {
     query() {
-      if (weatherList.get(this.query)) {
-        this.query2 = weatherList.get(this.query);
-      } else {
-        this.query2 = this.query;
-      }
+      // if (weatherList.get(this.query)) {
+      //   this.query2 = weatherList.get(this.query);
+      // } else {
+      //   this.query2 = this.query;
+      // }
+      this.query2 = weatherList.get(this.query) ? weatherList.get(this.query) : this.query;
     },
     query2() {
       this.fetchWeather();

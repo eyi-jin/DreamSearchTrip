@@ -50,6 +50,8 @@
           </tr>
         </tbody>
       </table> -->
+      <button class="btn btn-sm btn-primary ms-2" @click="showInsertModal">글쓰기</button>
+
       <pagination-ui
         v-bind:listRowCount="listRowCount"
         v-bind:pageLinkCount="pageLinkCount"
@@ -57,8 +59,6 @@
         v-bind:totalListItemCount="totalListItemCount"
         v-on:call-parent-move-page="movePage"
       ></pagination-ui>
-
-      <button class="btn btn-sm btn-primary" @click="showInsertModal">글쓰기</button>
 
       <insert-modal v-on:call-parent-insert="closeAfterInsert"></insert-modal>
       <detail-modal

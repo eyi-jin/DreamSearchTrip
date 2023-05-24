@@ -7,7 +7,6 @@ import MainPage from "@/components/MainPage.vue";
 import SearchPage from "@/components/SearchPage.vue";
 import MyPage from "@/components/MyPage";
 import LoginPage from "@/components/LoginPage.vue";
-import MyBoardView from "@/components/my/MyBoardView.vue";
 import MyInfoView from "@/components/my/MyInfoView.vue";
 import MyTripView from "@/components/my/MyTripView.vue";
 import BoardPage from "@/components/BoardPage.vue";
@@ -36,7 +35,6 @@ export default new VueRouter({
       component: MyPage,
       children: [
         { name: "MyInfoView", path: "", component: MyInfoView },
-        { name: "MyBoardView", path: "myboard", component: MyBoardView },
         { name: "MyTripView", path: "trip", component: MyTripView },
       ],
     },

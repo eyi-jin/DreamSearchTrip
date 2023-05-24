@@ -29,6 +29,15 @@
         />
         <button @click="boardList" class="btn btn-primary" type="button">Search</button>
       </div>
+      <div class="form-check form-switch d-flex justify-content-end pe-2">
+        <input
+          class="form-check-input me-2"
+          type="checkbox"
+          id="flexSwitchCheckChecked"
+          @click="checked"
+        />
+        <label class="form-check-label" for="flexSwitchCheckChecked">My Board</label>
+      </div>
       <card-view v-bind:list="list" @call-parent-detail="boardDetail"></card-view>
       <!-- <table class="table table-hover">
         <thead>
@@ -88,6 +97,7 @@ export default {
   components: { InsertModal, DetailModal, UpdateModal, PaginationUi, CardView },
   data() {
     return {
+      check: false,
       // modal
       insertModal: null,
       detailModal: null,
@@ -119,20 +129,45 @@ export default {
     };
   },
   methods: {
-    async boardList() {
-      let params = {
-        limit: this.limit,
-        offset: this.offset,
-        searchWord: this.searchWord,
-      };
-      let response = await http.get("/boards", { params });
-      let { data } = response;
-      console.log(data);
-      if (data.result == "login") {
-        this.$router.push("/login");
+    checked() {
+      if (this.check == false) {
+        this.check = true;
       } else {
-        this.list = data.list;
-        this.totalListItemCount = data.count;
+        this.check = false;
+      }
+      this.boardList();
+    },
+    async boardList() {
+      if (this.check == false) {
+        let params = {
+          limit: this.limit,
+          offset: this.offset,
+          searchWord: this.searchWord,
+        };
+        let response = await http.get("/boards", { params });
+        let { data } = response;
+        console.log(data);
+        if (data.result == "login") {
+          this.$router.push("/login");
+        } else {
+          this.list = data.list;
+          this.totalListItemCount = data.count;
+        }
+      } else {
+        let params = {
+          limit: this.limit,
+          offset: this.offset,
+          searchWord: this.searchWord,
+        };
+        let response = await http.get("/boards/my", { params });
+        let { data } = response;
+        console.log(data);
+        if (data.result == "login") {
+          this.$router.push("/login");
+        } else {
+          this.list = data.list;
+          this.totalListItemCount = data.count;
+        }
       }
     },
     ListDate: function (data) {

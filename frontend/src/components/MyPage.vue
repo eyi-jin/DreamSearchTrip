@@ -33,9 +33,6 @@
                   <router-link to="/my"> My page </router-link>
                 </li>
                 <li>
-                  <router-link to="/my/myboard"> my board </router-link>
-                </li>
-                <li>
                   <router-link to="/my/trip"> My Trip </router-link>
                 </li>
               </div>

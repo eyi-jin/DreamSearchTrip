@@ -11,6 +11,7 @@
 		SELECT *
 	 	  FROM todo_list
 	 	 WHERE user_seq = #{userSeq}
+	 	 order by todo_id DESC
 	</select>
 	
 	<update id="todoUpdate" parameterType="com.mycom.myboard.dto.TodoDto">

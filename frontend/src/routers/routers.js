@@ -12,6 +12,7 @@ import MyTripView from "@/components/my/MyTripView.vue";
 import BoardPage from "@/components/BoardPage.vue";
 import SignupPage from "@/components/SignupPage.vue";
 import WeatherPage from "@/components/WeatherPage.vue";
+import MyTodoView from "@/components/my/MyTodoView.vue";
 
 export default new VueRouter({
   routes: [
@@ -35,6 +36,7 @@ export default new VueRouter({
       component: MyPage,
       children: [
         { name: "MyInfoView", path: "", component: MyInfoView },
+        { name: "MyTodoView", path: "todo", component: MyTodoView },
         { name: "MyTripView", path: "trip", component: MyTripView },
       ],
     },

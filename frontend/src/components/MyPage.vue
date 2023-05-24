@@ -35,6 +35,9 @@
                 <li>
                   <router-link to="/my/trip"> My Trip </router-link>
                 </li>
+                <li>
+                  <router-link to="/my/todo"> My Todo </router-link>
+                </li>
               </div>
             </div>
           </div>

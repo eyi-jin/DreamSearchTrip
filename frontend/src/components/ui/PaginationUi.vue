@@ -1,5 +1,5 @@
 <template>
-  <div class="container d-flex justify-content-center">
+  <div class="container d-flex justify-content-center" style="z-index: -99">
     <nav class="mt-5" aria-label="Page navigation example" data-aos="fade-up" data-aos-delay="100">
       <ul class="custom-pagination pagination">
         <li v-if="prev" class="page-item">

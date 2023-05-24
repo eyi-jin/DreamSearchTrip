@@ -2,58 +2,35 @@
   <div>
     <div class="section">
       <div class="container">
+        <div class="row">
+          <div class="col-12" data-aos="fade-up" data-aos-delay="0">
+            <h2 class="heading">My Board</h2>
+          </div>
+        </div>
         <div class="row d-flex justify-content-center">
-          <div class="section">
-            <div class="container">
-              <div class="row d-flex justify-content-center">
-                <!-- board -->
-                <div class="container mt-3">
-                  <card-view v-bind:list="list" @call-parent-detail="boardDetail"></card-view>
-                  <!-- <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>title</th>
-            <th>writer</th>
-            <th>date</th>
-            <th>views</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(board, index) in list" :key="index" @click="boardDetail(board.boardId)">
-            <td>{{ board.boardId }}</td>
-            <td>{{ board.title }}</td>
-            <td>{{ board.userName }}</td>
-            <td>{{ ListDate(board.regDt.date) }}</td>
-            <td>{{ board.readCount }}</td>
-          </tr>
-        </tbody>
-      </table> -->
-                  <button class="btn btn-sm btn-primary ms-2" @click="showInsertModal">
-                    글쓰기
-                  </button>
+          <!-- board -->
+          <div class="container">
+            <card-view v-bind:list="list" @call-parent-detail="boardDetail"></card-view>
+            <!-- <button class="btn btn-sm btn-primary ms-2" @click="showInsertModal">글쓰기</button> -->
 
-                  <pagination-ui
-                    v-bind:listRowCount="listRowCount"
-                    v-bind:pageLinkCount="pageLinkCount"
-                    v-bind:currentPageIndex="currentPageIndex"
-                    v-bind:totalListItemCount="totalListItemCount"
-                    v-on:call-parent-move-page="movePage"
-                  ></pagination-ui>
+            <pagination-ui
+              v-bind:listRowCount="listRowCount"
+              v-bind:pageLinkCount="pageLinkCount"
+              v-bind:currentPageIndex="currentPageIndex"
+              v-bind:totalListItemCount="totalListItemCount"
+              v-on:call-parent-move-page="movePage"
+            ></pagination-ui>
 
-                  <insert-modal v-on:call-parent-insert="closeAfterInsert"></insert-modal>
-                  <detail-modal
-                    v-bind:board="board"
-                    v-on:call-parent-change-to-update="changeToUpdate"
-                    v-on:call-parent-change-to-delete="changeToDelete"
-                  ></detail-modal>
-                  <update-modal
-                    v-bind:board="board"
-                    v-on:call-parent-change-to-update="closeAfterUpdate"
-                  ></update-modal>
-                </div>
-              </div>
-            </div>
+            <insert-modal v-on:call-parent-insert="closeAfterInsert"></insert-modal>
+            <detail-modal
+              v-bind:board="board"
+              v-on:call-parent-change-to-update="changeToUpdate"
+              v-on:call-parent-change-to-delete="changeToDelete"
+            ></detail-modal>
+            <update-modal
+              v-bind:board="board"
+              v-on:call-parent-change-to-update="closeAfterUpdate"
+            ></update-modal>
           </div>
         </div>
       </div>

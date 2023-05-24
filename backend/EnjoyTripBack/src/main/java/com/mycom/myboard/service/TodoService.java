@@ -6,6 +6,8 @@ import com.mycom.myboard.dto.TodoDto;
 
 public interface TodoService {
 	int todoRegist(TodoDto todoDto);
+	
+	int todoUpdate(TodoDto todoDto);
 
 	int todoDelete(int todoId);
 

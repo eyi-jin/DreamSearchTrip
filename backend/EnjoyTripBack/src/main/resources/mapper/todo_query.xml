@@ -13,6 +13,12 @@
 	 	 WHERE user_seq = #{userSeq}
 	</select>
 	
+	<update id="todoUpdate" parameterType="com.mycom.myboard.dto.TodoDto">
+		update todo_list
+		   set todo_status = #{todoStatus}
+		 where todo_id = #{todoId} and user_seq = #{userSeq}
+	</update>
+	
     <delete id="todoDelete" parameterType="int">
         DELETE FROM todo_list WHERE todo_id = #{todoId}
     </delete>

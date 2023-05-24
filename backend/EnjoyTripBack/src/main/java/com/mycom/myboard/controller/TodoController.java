@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -42,6 +43,22 @@ public class TodoController{
 		}
 		return map;
 	}
+	
+	@PutMapping(value="/todo/todoUpdate")
+	protected Map<String, String> todoUpdate( @RequestBody TodoDto todoDto, HttpServletRequest request) {
+		Map<String, String>map = new HashMap<>();
+		
+		todoDto.setUserSeq( ((UserDto) request.getSession().getAttribute("userDto")).getUserSeq());
+		System.out.println("todoDto: "+ todoDto);
+		
+		if( todoService.todoUpdate(todoDto) == SUCCESS ) {
+			map.put("result", "success");
+		}else {
+			map.put("result", "fail");
+		}
+		return map;
+	}
+	
  
 	@DeleteMapping(value="/todo/todoDelete/{todoId}")
 	protected Map<String, String> favDelete( @PathVariable int todoId ) {

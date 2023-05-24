@@ -10,6 +10,8 @@ import com.mycom.myboard.dto.TodoDto;
 @Mapper
 public interface TodoDao {
 	int todoRegist(TodoDto todoDto);
+	
+	int todoUpdate(TodoDto todoDto);
 
 	int todoDelete(int todoId);
 

@@ -18,6 +18,12 @@ public class TodoServiceImpl implements TodoService {
 	public int todoRegist(TodoDto todoDto) {
 		return todoDao.todoRegist(todoDto);
 	}
+	
+
+	@Override
+	public int todoUpdate(TodoDto todoDto) {
+		return todoDao.todoUpdate(todoDto);
+	}
 
 	@Override
 	public int todoDelete(int todoId) {
@@ -29,5 +35,6 @@ public class TodoServiceImpl implements TodoService {
 	public List<TodoDto> todoView(int userSeq) {
 		return todoDao.todoView(userSeq);
 	}
+
 
 }

@@ -56,6 +56,7 @@ public class BoardController {
 			return ResponseEntity.notFound().build();
 		}
 	}
+	
 	@GetMapping(value="/boards/my")
 	public ResponseEntity<BoardResultDto> boardListMy(BoardParamDto boardParamDto, HttpSession session){
 		

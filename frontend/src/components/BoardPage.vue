@@ -264,4 +264,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.form-check-input {
+  height: 1em !important;
+}
+</style>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.mycom.myboard.dao.TodoDao">
+
+	<insert id="todoRegist" parameterType="com.mycom.myboard.dto.TodoDto">
+        INSERT INTO todo_list ( todo_content, todo_status, user_seq )
+                    VALUES (  #{todoContent}, #{todoStatus}, #{userSeq} )
+    </insert>
+
+	<select id="todoView" parameterType="int" resultType="com.mycom.myboard.dto.TodoDto">
+		SELECT *
+	 	  FROM todo_list
+	 	 WHERE user_seq = #{userSeq}
+	</select>
+	
+    <delete id="todoDelete" parameterType="int">
+        DELETE FROM todo_list WHERE todo_id = #{todoId}
+    </delete>
+
+</mapper>

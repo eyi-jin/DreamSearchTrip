@@ -29,7 +29,7 @@
                 class="form-check-input me-4"
                 type="checkbox"
                 id="flexCheckDefault"
-                @click="todoCheck(item)"
+                @click="todoCheck(item.todoStatus, item.todoId)"
               />
               <label style="zoom: 1.5" class="form-check-label" for="flexCheckDefault"
                 >{{ item.todoContent }}
@@ -106,11 +106,17 @@ export default {
       });
     },
     async todoCheck(status, todoId) {
+      console.log(status);
+      if (status == 0) {
+        status = 1;
+      } else {
+        status = 0;
+      }
       let params = {
         todoId: todoId,
         todoStatus: status,
       };
-      let response = await http.put("/todo/todoUpdate/", params);
+      let response = await http.put("/todo/todoUpdate", params);
       let { data } = response;
       if (data.result !== "success") {
         this.$alertify.error("체크과정에서 오류가 발생했습니다.");

@@ -47,7 +47,14 @@ public class BoardController {
 		if( boardParamDto.getSearchWord().isEmpty() ) {
 			boardResultDto = service.boardList(boardParamDto);
 		}else {
-			boardResultDto = service.boardListSearchWord(boardParamDto);
+			if(boardParamDto.getSelected().equals("title")) {
+				boardResultDto = service.boardListSearchWord(boardParamDto);
+			}else if(boardParamDto.getSelected().equals("content")) {
+				boardResultDto = service.boardListSearchWordContent(boardParamDto);
+			}else {
+				boardResultDto = service.boardListSearchWordAuthor(boardParamDto);
+			}
+			
 		}
 		
 		if( boardResultDto.getResult() == SUCCESS ) {

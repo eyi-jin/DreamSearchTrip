@@ -331,6 +331,48 @@ public class BoardServiceImpl implements BoardService {
 		return boardResultDto;
 	}
 
+	@Override
+	public BoardResultDto boardListSearchWordContent(BoardParamDto boardParamDto) {
+		BoardResultDto boardResultDto = new BoardResultDto();
+
+		try {
+			List<BoardDto> list = dao.boardListSearchWordContent(boardParamDto);
+			int count = dao.boardListTotalSearchWordContentCount(boardParamDto);
+
+			boardResultDto.setList(list);
+			boardResultDto.setCount(count);
+
+			boardResultDto.setResult(SUCCESS);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			boardResultDto.setResult(FAIL);
+		}
+
+		return boardResultDto;
+	}
+
+	@Override
+	public BoardResultDto boardListSearchWordAuthor(BoardParamDto boardParamDto) {
+		BoardResultDto boardResultDto = new BoardResultDto();
+
+		try {
+			List<BoardDto> list = dao.boardListSearchWordAuthor(boardParamDto);
+			int count = dao.boardListTotalSearchWordAuthorCount(boardParamDto);
+
+			boardResultDto.setList(list);
+			boardResultDto.setCount(count);
+
+			boardResultDto.setResult(SUCCESS);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			boardResultDto.setResult(FAIL);
+		}
+
+		return boardResultDto;
+	}
+
 //	@Override
 //	public int boardListSearchWordTotalCount(ParamDto paramDto) {
 //		return dao.boardListSearchWordTotalCount(paramDto);

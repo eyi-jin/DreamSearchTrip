@@ -9,9 +9,9 @@
           <div class="col-lg-6 mx-auto text-center">
             <h1 class="heading" data-aos="fade-up">Mypage</h1>
             <p data-aos="fade-up">
-              A small river named Duden flows by their place and supplies it with the necessary
-              regelialia. It is a paradisematic country, in which roasted parts of sentences fly
-              into your mouth.
+              This page is where we express ourselves and build our inner world. It contains our
+              dreams and passion and becomes our own tranquil resting place. This is our own little
+              world and dream.
             </p>
           </div>
         </div>

@@ -16,6 +16,7 @@ public class BoardParamDto {
 	private int limit;
 	private int offset;
 	private String searchWord;
+	private String selected;
 	
 	// 상세
 	private int boardId;

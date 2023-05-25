@@ -15,8 +15,11 @@ public interface BoardService {
 	
 	BoardResultDto boardList(BoardParamDto boardParamDto);
 	BoardResultDto boardListSearchWord(BoardParamDto boardParamDto);
+	BoardResultDto boardListSearchWordContent(BoardParamDto boardParamDto);
+	BoardResultDto boardListSearchWordAuthor(BoardParamDto boardParamDto);
 	
 	BoardResultDto boardListMy(BoardParamDto boardParamDto);
+	
 	
 	
 }

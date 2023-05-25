@@ -10,9 +10,11 @@
           <div class="col-lg-5">
             <h1 class="heading" data-aos="fade-up">It's a Big World Out There, Go Explore</h1>
             <p class="mb-5" data-aos="fade-up">
-              A small river named Duden flows by their place and supplies it with the necessary
-              regelialia. It is a paradisematic country, in which roasted parts of sentences fly
-              into your mouth.
+              The world is so wide and so beautiful that everywhere I go is full of surprises.
+              Mountains and seas, cities and villages, culture and the richness of history are all
+              waiting for us. When we open the door of travel, we can meet new experiences,
+              adventures, love and growth. We are all travelers, and our stories fill and enrich the
+              world.
             </p>
 
             <!-- <div data-aos="fade-up">

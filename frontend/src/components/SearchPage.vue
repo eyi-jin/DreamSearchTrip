@@ -8,7 +8,9 @@
         <div class="row align-items-center justify-content-start">
           <div class="col-lg-6 mx-auto text-center">
             <h1 class="heading" data-aos="fade-up">Search</h1>
-            <p class="mb-4" data-aos="fade-up">{{ userName }}님 여행지를 검색해보세요</p>
+            <p class="mb-4" data-aos="fade-up">
+              Hello {{ userName }}! Let's search for travel destinations
+            </p>
           </div>
         </div>
       </div>

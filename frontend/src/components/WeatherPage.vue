@@ -4,6 +4,22 @@
     :class="typeof weather.main != 'undefined' && Math.round(weather.main.temp) > 16 ? 'warm' : ''"
   >
     <main>
+      <div
+        class="hero overlay d-flex justify-content-center"
+        style="background-color: #ffffff; background-color: rgba(0, 0, 0, 0)"
+      >
+        <div class="container">
+          <div class="row align-items-center justify-content-start mt-4">
+            <div class="col-lg-6 mx-auto text-center">
+              <h1 class="heading" data-aos="fade-up">Weather</h1>
+              <p data-aos="fade-up">
+                The weather of the mind is always changing. We look for doors that open our minds,
+                and explore the inner landscape.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="search-box">
         <input type="text" class="search-bar" placeholder="Search..." v-model="query" />
         <!-- @keypress="fetchWeather" -->
@@ -106,7 +122,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.hero.overlay:before {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+.hero > .container > .row {
+  padding-bottom: 0rem;
+}
 * {
   margin: 0;
   padding: 0;

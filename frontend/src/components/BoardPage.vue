@@ -9,9 +9,9 @@
           <div class="col-lg-5">
             <h1 class="heading" data-aos="fade-up">Board</h1>
             <p class="mb-5" data-aos="fade-up">
-              A small river named Duden flows by their place and supplies it with the necessary
-              regelialia. It is a paradisematic country, in which roasted parts of sentences fly
-              into your mouth.
+              Boards provide us with connections to unknown people, and are places to share
+              knowledge and experience. In it, we can understand and encourage each other, and get a
+              new perspective.
             </p>
           </div>
         </div>

@@ -18,6 +18,7 @@ public class FavDto {
 	private String favImgUrl;
 	private String favAddr;
 	private String favTel;
+	private String favDate;
 	private int userSeq;
 
 }

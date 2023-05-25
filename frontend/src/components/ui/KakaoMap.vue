@@ -40,9 +40,15 @@ export default {
                 let obj = {};
                 obj.title = trip.title;
                 obj.addr = trip.addr1;
-                obj.img = trip.firstimage;
+                obj.img =
+                    trip.firstimage !== ""
+                        ? trip.firstimage
+                        : require("@/assets/img_" +
+                              Math.floor(Math.random() * 3 + 1) +
+                              ".jpg");
                 obj.contentId = trip.contentid;
                 obj.tel = trip.tel;
+                obj.createdTime = trip.createdtime;
                 obj.latlng = new kakao.maps.LatLng(trip.mapy, trip.mapx);
 
                 this.positions.push(obj);
@@ -60,6 +66,11 @@ export default {
         }
     },
     methods: {
+        replaceImg(e) {
+            return (e.target.src = require("@/assets/img_" +
+                Math.floor(Math.random() * 3 + 1) +
+                ".jpg"));
+        },
         // api 불러오기
         loadScript() {
             const script = document.createElement("script");
@@ -185,6 +196,7 @@ export default {
                         favImgUrl: position.img,
                         favAddr: position.addr,
                         favTel: position.tel,
+                        favDate: position.createdTime,
                     };
                     let response = await http.post(url, params);
                     let { data } = response;

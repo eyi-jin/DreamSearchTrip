@@ -3,8 +3,8 @@
 <mapper namespace="com.mycom.myboard.dao.FavDao">
 
 	<insert id="favRegister" parameterType="com.mycom.myboard.dto.FavDto">
-        INSERT INTO favorite ( content_id, fav_name, fav_img_url, fav_addr, fav_tel, user_seq )
-                    VALUES (  #{contentId}, #{favName}, #{favImgUrl}, #{favAddr}, #{favTel}, #{userSeq} )
+        INSERT INTO favorite ( content_id, fav_name, fav_img_url, fav_addr, fav_tel, fav_date, user_seq )
+                    VALUES (  #{contentId}, #{favName}, #{favImgUrl}, #{favAddr}, #{favTel}, #{favDate}, #{userSeq} )
     </insert>
 
 	<select id="favView" parameterType="int" resultType="com.mycom.myboard.dto.FavDto">

@@ -24,7 +24,9 @@
                             />
                         </a>
                         <div class="bg-white m-body">
-                            <span class="date">May 14, 2020</span>
+                            <span class="date">
+                                {{ fav.favDate | yyyyMMdd }}
+                            </span>
                             <button
                                 class="position-absolute top-50 end-0 m-3 px-1 btn-sm btn-close"
                                 @click="myTripDelete(fav.favId)"
@@ -70,6 +72,26 @@ export default {
             console.log(data);
 
             this.getFavList();
+        },
+    },
+    filters: {
+        // filter로 쓸 filter ID 지정
+        yyyyMMdd: function (value) {
+            // 들어오는 value 값이 공백이면 그냥 공백으로 돌려줌
+            if (value == undefined) return "";
+
+            let stringDate = [];
+            stringDate.push(value.substr(0, 4));
+            stringDate.push(value.substr(4, 2));
+            stringDate.push(value.substr(6, 2));
+
+            // 현재 Date 혹은 DateTime 데이터를 javaScript date 타입화
+            var js_date = new Date(stringDate).toLocaleDateString("en-us", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+            });
+            return js_date;
         },
     },
 };

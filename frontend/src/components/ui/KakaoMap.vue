@@ -43,6 +43,7 @@ export default {
                 obj.img = trip.firstimage;
                 obj.contentId = trip.contentid;
                 obj.tel = trip.tel;
+                obj.createdTime = trip.createdtime;
                 obj.latlng = new kakao.maps.LatLng(trip.mapy, trip.mapx);
 
                 this.positions.push(obj);
@@ -185,6 +186,7 @@ export default {
                         favImgUrl: position.img,
                         favAddr: position.addr,
                         favTel: position.tel,
+                        favDate: position.createdTime,
                     };
                     let response = await http.post(url, params);
                     let { data } = response;

@@ -15,45 +15,45 @@ import WeatherPage from "@/components/WeatherPage.vue";
 import MyTodoView from "@/components/my/MyTodoView.vue";
 
 export default new VueRouter({
-  routes: [
-    {
-      name: "MainPage",
-      path: "/",
-      component: MainPage,
-    },
-    {
-      name: "BoardPage",
-      path: "/board",
-      component: BoardPage,
-    },
-    {
-      name: "LoginPage",
-      path: "/login",
-      component: LoginPage,
-    },
-    {
-      path: "/my",
-      component: MyPage,
-      children: [
-        { name: "MyInfoView", path: "", component: MyInfoView },
-        { name: "MyTodoView", path: "todo", component: MyTodoView },
-        { name: "MyTripView", path: "trip", component: MyTripView },
-      ],
-    },
-    {
-      name: "SearchPage",
-      path: "/search",
-      component: SearchPage,
-    },
-    {
-      name: "SignupPage",
-      path: "/signup",
-      component: SignupPage,
-    },
-    {
-      name: "WeatherPage",
-      path: "/weather",
-      component: WeatherPage,
-    },
-  ],
+    routes: [
+        {
+            name: "MainPage",
+            path: "/",
+            component: MainPage,
+        },
+        {
+            name: "BoardPage",
+            path: "/board",
+            component: BoardPage,
+        },
+        {
+            name: "LoginPage",
+            path: "/login",
+            component: LoginPage,
+        },
+        {
+            path: "/my",
+            component: MyPage,
+            children: [
+                { name: "MyTripView", path: "", component: MyTripView },
+                { name: "MyInfoView", path: "info", component: MyInfoView },
+                { name: "MyTodoView", path: "todo", component: MyTodoView },
+            ],
+        },
+        {
+            name: "SearchPage",
+            path: "/search",
+            component: SearchPage,
+        },
+        {
+            name: "SignupPage",
+            path: "/signup",
+            component: SignupPage,
+        },
+        {
+            name: "WeatherPage",
+            path: "/weather",
+            component: WeatherPage,
+        },
+    ],
 });

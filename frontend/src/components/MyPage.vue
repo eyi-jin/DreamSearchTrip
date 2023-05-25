@@ -31,10 +31,10 @@
                             <div class="categories">
                                 <h3>Categories</h3>
                                 <li>
-                                    <router-link to="/my"> My page </router-link>
+                                    <router-link to="/my"> My Trip </router-link>
                                 </li>
                                 <li>
-                                    <router-link to="/my/trip"> My Trip </router-link>
+                                    <router-link to="/my/info"> My page </router-link>
                                 </li>
                                 <li>
                                     <router-link to="/my/todo"> My Todo </router-link>

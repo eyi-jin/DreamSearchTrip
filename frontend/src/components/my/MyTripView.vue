@@ -18,6 +18,7 @@
                         <a href="#">
                             <img
                                 :src="fav.favImgUrl"
+                                @error="replaceImg"
                                 alt="Image"
                                 class="img-fluid"
                                 style="height: 200px"
@@ -72,6 +73,11 @@ export default {
             console.log(data);
 
             this.getFavList();
+        },
+        replaceImg(e) {
+            e.target.src = require("@/assets/img_" +
+                Math.floor(Math.random() * 3 + 1) +
+                ".jpg");
         },
     },
     filters: {

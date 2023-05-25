@@ -40,7 +40,12 @@ export default {
                 let obj = {};
                 obj.title = trip.title;
                 obj.addr = trip.addr1;
-                obj.img = trip.firstimage;
+                obj.img =
+                    trip.firstimage !== ""
+                        ? trip.firstimage
+                        : require("@/assets/img_" +
+                              Math.floor(Math.random() * 3 + 1) +
+                              ".jpg");
                 obj.contentId = trip.contentid;
                 obj.tel = trip.tel;
                 obj.createdTime = trip.createdtime;
@@ -61,6 +66,11 @@ export default {
         }
     },
     methods: {
+        replaceImg(e) {
+            return (e.target.src = require("@/assets/img_" +
+                Math.floor(Math.random() * 3 + 1) +
+                ".jpg"));
+        },
         // api 불러오기
         loadScript() {
             const script = document.createElement("script");

@@ -45,4 +45,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.hero > .container > .row {
+  padding-top: 8rem;
+  padding-bottom: 7rem;
+}
+</style>

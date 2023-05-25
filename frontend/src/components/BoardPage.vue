@@ -20,6 +20,17 @@
     <!-- board -->
     <div class="container mt-3">
       <div class="input-group mb-3">
+        <span class="row ms-2 me-1 col-2">
+          <select
+            v-model="selected"
+            class="form-select form-select-sm"
+            aria-label=".form-select-sm example"
+          >
+            <option value="title">Title</option>
+            <option value="content">Content</option>
+            <option value="author">Author</option>
+          </select>
+        </span>
         <input
           id="inputSearchWord"
           type="text"
@@ -97,6 +108,7 @@ export default {
   components: { InsertModal, DetailModal, UpdateModal, PaginationUi, CardView },
   data() {
     return {
+      selected: "title",
       check: false,
       // modal
       insertModal: null,
@@ -143,6 +155,7 @@ export default {
           limit: this.limit,
           offset: this.offset,
           searchWord: this.searchWord,
+          selected: this.selected,
         };
         let response = await http.get("/boards", { params });
         let { data } = response;
@@ -260,6 +273,11 @@ export default {
     this.insertModal = new Modal(document.querySelector("#insertModal"));
     this.detailModal = new Modal(document.querySelector("#detailModal"));
     this.updateModal = new Modal(document.querySelector("#updateModal"));
+  },
+  watch: {
+    selected() {
+      console.log(this.selected);
+    },
   },
 };
 </script>

@@ -9,9 +9,9 @@
           <div class="col-lg-6 mx-auto text-center">
             <h1 class="heading" data-aos="fade-up">Sign up</h1>
             <p data-aos="fade-up">
-              A small river named Duden flows by their place and supplies it with the necessary
-              regelialia. It is a paradisematic country, in which roasted parts of sentences fly
-              into your mouth.
+              It was to introduce my existence and decide what role I would play in this space. And
+              that story will transcend me and spread to the world. I chose a password as the final
+              step.
             </p>
           </div>
         </div>

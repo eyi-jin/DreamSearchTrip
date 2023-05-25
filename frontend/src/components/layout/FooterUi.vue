@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="widget">
-              <h3>About Passport<span class="text-primary">.</span></h3>
+              <h3>About Dream Search Tour<span class="text-primary">.</span></h3>
               <p>
                 Far far away, behind the word mountains, far from the countries Vokalia and
                 Consonantia, there live the blind texts.
@@ -43,11 +43,9 @@
             <div class="widget">
               <h3>Links</h3>
               <ul class="list-unstyled float-left links">
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><router-link to="/">Main</router-link></li>
+                <li><router-link to="/board">Board</router-link></li>
+                <li><router-link to="/weather">Weather</router-link></li>
               </ul>
             </div>
             <!-- /.widget -->
@@ -58,11 +56,9 @@
             <div class="widget">
               <h3>Company</h3>
               <ul class="list-unstyled float-left links">
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Contact</a></li>
+                <li>SSAFY BUK</li>
+                <li>Jeong Myeong Jin</li>
+                <li>Choi Jin Seok</li>
               </ul>
             </div>
             <!-- /.widget -->
@@ -72,11 +68,10 @@
           <div class="col-lg-3">
             <div class="widget">
               <h3>Contact</h3>
-              <address>43 Raymouth Rd. Baltemoer, London 3910</address>
+              <address>333, Noksansaneopjung-ro, Gangseo-gu, Busan</address>
               <ul class="list-unstyled links mb-4">
-                <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-                <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
-                <li><a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
+                <li>02-3429-5100</li>
+                <li>ssafy@ssafy.com</li>
               </ul>
             </div>
             <!-- /.widget -->

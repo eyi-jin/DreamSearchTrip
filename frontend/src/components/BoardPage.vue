@@ -2,7 +2,7 @@
   <div>
     <div class="hero overlay">
       <div class="img-bg rellax">
-        <img src="images/hero_2.jpg" alt="Image" class="img-fluid" />
+        <img src="images/castle.jpg" alt="Image" class="img-fluid" />
       </div>
       <div class="container">
         <div class="row align-items-center justify-content-start">

@@ -52,6 +52,7 @@
                       <span class="fileName">{{ file.fileName }}</span>
                       &nbsp;&nbsp;
                       <a
+                        style="color: black"
                         type="button"
                         class="btn btn-outline btn-default btn-xs"
                         data-fileId="${fileId}"
